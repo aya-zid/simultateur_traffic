@@ -49,7 +49,9 @@ class PositionVehiculeInvalideError(ValueError):
 class AucuneMiseAJourPossibleError(RuntimeError):
     """Levée lorsque la mise à jour des véhicules est impossible (aucun véhicule sur la route)."""
     pass
-
+class PositionFeuInvalideError(Exception):
+    """Exception levée lorsqu'un feu rouge est placé à une position invalide sur une route."""
+    pass
 # -----------------------------
 # Exceptions liées a la classe reseau
 # -----------------------------
@@ -90,4 +92,10 @@ class DonneesInvalideError(AnalyseurError):
 
 class CalculStatistiquesError(AnalyseurError):
     """Erreur survenue lors du calcul des statistiques."""
+    pass
+# -----------------------------
+# Exceptions liées a la classe FeuRouge
+# -----------------------------
+class CycleInvalideError(Exception):
+    """Exception levée lorsqu'un cycle de feu rouge est invalide."""
     pass

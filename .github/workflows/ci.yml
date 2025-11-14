@@ -1,0 +1,82 @@
+name: CI - Simulateur Routier
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  tests:
+    runs-on: windows-latest
+    
+    steps:
+    - name: Checkout du code
+      uses: actions/checkout@v4
+      
+    - name: Configuration de Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+        
+    - name: Installation de Poetry
+      run: |
+        pip install poetry
+        poetry --version
+        
+    - name: Installation des dépendances
+      run: |
+        poetry install --with dev
+        poetry show
+        
+    - name: Exécution des tests unittest
+      run: |
+        poetry run python -m unittest discover tests/ -p "test_*unittest*.py" -v
+        
+    - name: Exécution des tests pytest
+      run: |
+        poetry run pytest tests/ -v
+        
+    - name: Exécution des tests avec couverture
+      run: |
+        poetry run pytest tests/ --cov=models --cov-report=term-missing
+        
+    - name: Génération du rapport de couverture XML
+      run: |
+        poetry run pytest tests/ --cov=models --cov-report=xml
+        
+    - name: Upload du rapport de couverture vers Codecov
+      uses: codecov/codecov-action@v3
+      with:
+        file: ./coverage.xml
+        flags: unittests
+        name: codecov-umbrella
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout du code
+      uses: actions/checkout@v4
+      
+    - name: Configuration de Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+        
+    - name: Installation de Poetry
+      run: pip install poetry
+      
+    - name: Installation des dépendances
+      run: poetry install --with dev
+      
+    - name: Vérification de la syntaxe avec pylint
+      run: |
+        poetry run pylint models/ --fail-under=7.0 || echo "⚠️  Pylint a trouvé des problèmes (mais continue)"
+        
+    - name: Formatage avec black
+      run: |
+        poetry run black --check models/ tests/ || echo "⚠️  Black a trouvé des problèmes de formatage (mais continue)"
+        
+    - name: Tri des imports avec isort
+      run: |
+        poetry run isort --check-only models/ tests/ || echo "⚠️  Isort a trouvé des problèmes (mais continue)"
