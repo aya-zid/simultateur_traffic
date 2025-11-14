@@ -1,0 +1,131 @@
+affichage
+=========
+
+.. py:module:: affichage
+
+.. autoapi-nested-parse::
+
+   Module Affichage - Visualisation des données de simulation
+
+   Ce module fournit des fonctions pour afficher les résultats de simulation
+   sous forme de graphiques et de visualisations en console.
+
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   affichage.Affichage
+
+
+Module Contents
+---------------
+
+.. py:class:: Affichage(style='seaborn-v0_8')
+
+   Classe pour la visualisation des données de simulation.
+
+   Cette classe génère des graphiques et des affichages console
+   pour analyser les résultats de la simulation de trafic.
+
+   :ivar style: Style matplotlib à utiliser
+   :vartype style: str
+   :ivar palette_couleurs: Palette de couleurs pour les graphiques
+
+   :vartype palette_couleurs: list
+
+   .. admonition:: Exemple
+
+      >>> affichage = Affichage()
+      >>> affichage.afficher_statistiques_temps_reel(stats)
+
+
+   .. py:attribute:: style
+      :value: 'seaborn-v0_8'
+
+
+
+   .. py:attribute:: palette_couleurs
+      :value: 'husl'
+
+
+
+   .. py:method:: afficher_tableau_bord_temps_reel(stats_actuelles: Dict, reseau)
+
+      Affiche un tableau de bord en temps réel dans la console.
+
+      :param stats_actuelles: Statistiques du tour actuel
+      :type stats_actuelles: dict
+      :param reseau: Réseau routier à afficher
+
+      .. admonition:: Exemple
+
+         >>> affichage.afficher_tableau_bord_temps_reel(stats, reseau)
+
+
+
+   .. py:method:: generer_graphique_evolution(historique_stats: List[Dict], fichier_sortie: Optional[str] = None)
+
+      Génère un graphique montrant l'évolution des statistiques dans le temps.
+
+      :param historique_stats: Historique des statistiques
+      :type historique_stats: list
+      :param fichier_sortie: Fichier pour sauvegarder le graphique
+      :type fichier_sortie: str, optional
+
+      .. admonition:: Exemple
+
+         >>> affichage.generer_graphique_evolution(historique_stats, "evolution.png")
+
+
+
+   .. py:method:: generer_carte_flux(reseau, fichier_sortie: Optional[str] = None)
+
+      Génère une carte visuelle du réseau avec les flux de trafic.
+
+      :param reseau: Réseau routier à visualiser
+      :param fichier_sortie: Fichier pour sauvegarder la carte
+      :type fichier_sortie: str, optional
+
+      .. admonition:: Exemple
+
+         >>> affichage.generer_carte_flux(reseau, "carte_trafic.png")
+
+
+
+   .. py:method:: afficher_rapport_performance(rapport: Dict)
+
+      Affiche un rapport de performance détaillé dans la console.
+
+      :param rapport: Rapport de performance généré par l'analyseur
+      :type rapport: dict
+
+      .. admonition:: Exemple
+
+         >>> affichage.afficher_rapport_performance(rapport)
+
+
+
+   .. py:method:: generer_graphique_comparaison_routes(stats_routes: Dict, fichier_sortie: Optional[str] = None)
+
+      Génère un graphique comparant les routes entre elles.
+
+      :param stats_routes: Statistiques par route
+      :type stats_routes: dict
+      :param fichier_sortie: Fichier de sauvegarde
+      :type fichier_sortie: str, optional
+
+      .. admonition:: Exemple
+
+         >>> affichage.generer_graphique_comparaison_routes(stats_routes)
+
+
+
+   .. py:method:: __str__()
+
+      Représentation textuelle de l'affichage.
+
+
+

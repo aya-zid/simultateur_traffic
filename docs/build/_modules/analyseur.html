@@ -1,0 +1,602 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>analyseur &mdash; Documentation Simulateur de Trafic Routier Intelligent 1</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=a12a2fe1"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/translations.js?v=e6b791cb"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Simulateur de Trafic Routier Intelligent
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contenu:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html#presentation">Présentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html#objectifs-du-projet">Objectifs du Projet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html#cas-d-utilisation">Cas d’Utilisation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html#architecture-technique">Architecture Technique</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Utilisation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../usage.html#ligne-de-commande">Ligne de Commande</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../usage.html#options-disponibles">Options Disponibles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage.html#exemples-d-utilisation">Exemples d’Utilisation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../usage.html#utilisation-en-tant-que-module">Utilisation en tant que Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage.html#configuration-du-reseau">Configuration du Réseau</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage.html#format-des-sorties">Format des Sorties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage.html#visualisations">Visualisations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage.html#exemple-complet">Exemple Complet</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../api/conf/index.html">conf</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/conf/index.html#attributes">Attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/conf/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.project"><code class="docutils literal notranslate"><span class="pre">project</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.copyright"><code class="docutils literal notranslate"><span class="pre">copyright</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.author"><code class="docutils literal notranslate"><span class="pre">author</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.release"><code class="docutils literal notranslate"><span class="pre">release</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.extensions"><code class="docutils literal notranslate"><span class="pre">extensions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.autoapi_type"><code class="docutils literal notranslate"><span class="pre">autoapi_type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.autoapi_dirs"><code class="docutils literal notranslate"><span class="pre">autoapi_dirs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.autoapi_add_toctree_entry"><code class="docutils literal notranslate"><span class="pre">autoapi_add_toctree_entry</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.autoapi_root"><code class="docutils literal notranslate"><span class="pre">autoapi_root</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.autoapi_keep_files"><code class="docutils literal notranslate"><span class="pre">autoapi_keep_files</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.napoleon_google_docstring"><code class="docutils literal notranslate"><span class="pre">napoleon_google_docstring</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.napoleon_numpy_docstring"><code class="docutils literal notranslate"><span class="pre">napoleon_numpy_docstring</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.napoleon_include_init_with_doc"><code class="docutils literal notranslate"><span class="pre">napoleon_include_init_with_doc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.napoleon_include_private_with_doc"><code class="docutils literal notranslate"><span class="pre">napoleon_include_private_with_doc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.napoleon_include_special_with_doc"><code class="docutils literal notranslate"><span class="pre">napoleon_include_special_with_doc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.napoleon_use_admonition_for_examples"><code class="docutils literal notranslate"><span class="pre">napoleon_use_admonition_for_examples</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.napoleon_use_admonition_for_notes"><code class="docutils literal notranslate"><span class="pre">napoleon_use_admonition_for_notes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.napoleon_use_admonition_for_references"><code class="docutils literal notranslate"><span class="pre">napoleon_use_admonition_for_references</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.napoleon_use_ivar"><code class="docutils literal notranslate"><span class="pre">napoleon_use_ivar</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.napoleon_use_param"><code class="docutils literal notranslate"><span class="pre">napoleon_use_param</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.napoleon_use_rtype"><code class="docutils literal notranslate"><span class="pre">napoleon_use_rtype</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.html_theme"><code class="docutils literal notranslate"><span class="pre">html_theme</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.html_theme_options"><code class="docutils literal notranslate"><span class="pre">html_theme_options</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.html_static_path"><code class="docutils literal notranslate"><span class="pre">html_static_path</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.master_doc"><code class="docutils literal notranslate"><span class="pre">master_doc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.language"><code class="docutils literal notranslate"><span class="pre">language</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.todo_include_todos"><code class="docutils literal notranslate"><span class="pre">todo_include_todos</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.autoapi_options"><code class="docutils literal notranslate"><span class="pre">autoapi_options</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/route/index.html">route</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/route/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/route/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/route/index.html#route.Route"><code class="docutils literal notranslate"><span class="pre">Route</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/export/index.html">export</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/export/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/export/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/export/index.html#export.Export"><code class="docutils literal notranslate"><span class="pre">Export</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/reseau/index.html">reseau</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/reseau/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/reseau/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/reseau/index.html#reseau.ReseauRoutier"><code class="docutils literal notranslate"><span class="pre">ReseauRoutier</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/vehicule/index.html">vehicule</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/vehicule/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/vehicule/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/vehicule/index.html#vehicule.Vehicule"><code class="docutils literal notranslate"><span class="pre">Vehicule</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/analyseur/index.html">analyseur</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/analyseur/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/analyseur/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/analyseur/index.html#analyseur.Analyseur"><code class="docutils literal notranslate"><span class="pre">Analyseur</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/affichage/index.html">affichage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/affichage/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/affichage/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/affichage/index.html#affichage.Affichage"><code class="docutils literal notranslate"><span class="pre">Affichage</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/simulateur/index.html">simulateur</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/simulateur/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/simulateur/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/simulateur/index.html#simulateur.Simulateur"><code class="docutils literal notranslate"><span class="pre">Simulateur</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/test_simulateur/index.html">test_simulateur</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/test_simulateur/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/test_simulateur/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/test_simulateur/index.html#test_simulateur.TestVehicule"><code class="docutils literal notranslate"><span class="pre">TestVehicule</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/test_simulateur/index.html#test_simulateur.TestRoute"><code class="docutils literal notranslate"><span class="pre">TestRoute</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/test_simulateur/index.html#test_simulateur.TestReseauRoutier"><code class="docutils literal notranslate"><span class="pre">TestReseauRoutier</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/simulateur_trafic/index.html">simulateur_trafic</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/simulateur_trafic/index.html#submodules">Submodules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/simulateur_trafic/main/index.html">simulateur_trafic.main</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">Exemples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#exemple-basique">Exemple Basique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#exemple-avec-configuration-personnalisee">Exemple avec Configuration Personnalisée</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#exemple-avec-analyse-avancee">Exemple avec Analyse Avancée</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#exemple-avec-export-des-donnees">Exemple avec Export des Données</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#exemple-avec-visualisation">Exemple avec Visualisation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#scripts-d-exemple">Scripts d’Exemple</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Simulateur de Trafic Routier Intelligent</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Code du module</a></li>
+      <li class="breadcrumb-item active">analyseur</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Code source de analyseur</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Module Analyseur - Analyse des statistiques de simulation</span>
+
+<span class="sd">Ce module définit la classe Analyseur qui calcule diverses métriques</span>
+<span class="sd">et statistiques sur le réseau routier et la circulation.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">statistics</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span>
+
+<div class="viewcode-block" id="Analyseur">
+<a class="viewcode-back" href="../api/analyseur/index.html#analyseur.Analyseur">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Analyseur</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Analyseur des statistiques de trafic routier.</span>
+<span class="sd">    </span>
+<span class="sd">    Cette classe calcule les métriques de performance du réseau</span>
+<span class="sd">    comme les vitesses moyennes, les zones de congestion, et les temps de parcours.</span>
+<span class="sd">    </span>
+<span class="sd">    Attributes:</span>
+<span class="sd">        reseau (ReseauRoutier): Réseau routier à analyser</span>
+<span class="sd">        historique_congestion (list): Historique des niveaux de congestion</span>
+<span class="sd">    </span>
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; analyseur = Analyseur(reseau)</span>
+<span class="sd">        &gt;&gt;&gt; stats = analyseur.calculer_statistiques_tour()</span>
+<span class="sd">        &gt;&gt;&gt; print(f&quot;Vitesse moyenne: {stats[&#39;vitesse_moyenne&#39;]} km/h&quot;)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reseau</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initialise l&#39;analyseur avec un réseau.</span>
+<span class="sd">        </span>
+<span class="sd">        Args:</span>
+<span class="sd">            reseau (ReseauRoutier): Réseau routier à analyser</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+<div class="viewcode-block" id="Analyseur.reseau">
+<a class="viewcode-back" href="../api/analyseur/index.html#analyseur.Analyseur.reseau">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reseau</span> <span class="o">=</span> <span class="n">reseau</span></div>
+
+<div class="viewcode-block" id="Analyseur.historique_congestion">
+<a class="viewcode-back" href="../api/analyseur/index.html#analyseur.Analyseur.historique_congestion">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">historique_congestion</span> <span class="o">=</span> <span class="p">[]</span></div>
+
+    
+<div class="viewcode-block" id="Analyseur.calculer_statistiques_tour">
+<a class="viewcode-back" href="../api/analyseur/index.html#analyseur.Analyseur.calculer_statistiques_tour">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">calculer_statistiques_tour</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Calcule les statistiques pour le tour actuel.</span>
+<span class="sd">        </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            dict: Dictionnaire contenant toutes les statistiques du tour</span>
+<span class="sd">        </span>
+<span class="sd">        Example:</span>
+<span class="sd">            &gt;&gt;&gt; stats = analyseur.calculer_statistiques_tour()</span>
+<span class="sd">            &gt;&gt;&gt; print(stats[&#39;vitesse_moyenne&#39;])</span>
+<span class="sd">            65.5</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">stats</span> <span class="o">=</span> <span class="p">{}</span>
+        
+        <span class="c1"># Vitesse moyenne de tous les véhicules</span>
+        <span class="n">stats</span><span class="p">[</span><span class="s1">&#39;vitesse_moyenne&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calculer_vitesse_moyenne</span><span class="p">()</span>
+        
+        <span class="c1"># Densité moyenne du trafic</span>
+        <span class="n">stats</span><span class="p">[</span><span class="s1">&#39;densite_moyenne&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">reseau</span><span class="o">.</span><span class="n">get_densite_trafic_moyenne</span><span class="p">()</span>
+        
+        <span class="c1"># Niveau de congestion</span>
+        <span class="n">stats</span><span class="p">[</span><span class="s1">&#39;taux_congestion&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calculer_taux_congestion</span><span class="p">()</span>
+        
+        <span class="c1"># Nombre total de véhicules</span>
+        <span class="n">stats</span><span class="p">[</span><span class="s1">&#39;total_vehicules&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">reseau</span><span class="o">.</span><span class="n">get_nombre_total_vehicules</span><span class="p">()</span>
+        
+        <span class="c1"># Statistiques par route</span>
+        <span class="n">stats</span><span class="p">[</span><span class="s1">&#39;routes&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calculer_statistiques_routes</span><span class="p">()</span>
+        
+        <span class="c1"># Ajouter à l&#39;historique de congestion</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">historique_congestion</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">stats</span><span class="p">[</span><span class="s1">&#39;taux_congestion&#39;</span><span class="p">])</span>
+        
+        <span class="k">return</span> <span class="n">stats</span></div>
+
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">_calculer_vitesse_moyenne</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Calcule la vitesse moyenne de tous les véhicules.</span>
+<span class="sd">        </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            float: Vitesse moyenne en km/h, 0 si aucun véhicule</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">vitesses</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">route</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">reseau</span><span class="o">.</span><span class="n">routes</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="k">for</span> <span class="n">vehicule</span> <span class="ow">in</span> <span class="n">route</span><span class="o">.</span><span class="n">vehicules_presents</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+                <span class="n">vitesses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">vehicule</span><span class="o">.</span><span class="n">vitesse</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">vitesses</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">0.0</span>
+        
+        <span class="k">return</span> <span class="n">statistics</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">vitesses</span><span class="p">)</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">_calculer_taux_congestion</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Calcule le taux de congestion global du réseau.</span>
+<span class="sd">        </span>
+<span class="sd">        Le taux de congestion est basé sur la densité du trafic</span>
+<span class="sd">        et la réduction de vitesse par rapport aux limites.</span>
+<span class="sd">        </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            float: Taux de congestion entre 0 (fluide) et 100 (bouchon)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">reseau</span><span class="o">.</span><span class="n">routes</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">0.0</span>
+        
+        <span class="n">scores_congestion</span> <span class="o">=</span> <span class="p">[]</span>
+        
+        <span class="k">for</span> <span class="n">route</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">reseau</span><span class="o">.</span><span class="n">routes</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="c1"># Score basé sur la densité</span>
+            <span class="n">densite</span> <span class="o">=</span> <span class="n">route</span><span class="o">.</span><span class="n">get_densite_trafic</span><span class="p">()</span>
+            <span class="n">score_densite</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">densite</span> <span class="o">/</span> <span class="mf">50.0</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>  <span class="c1"># 50 véh/km = congestion max</span>
+            
+            <span class="c1"># Score basé sur la réduction de vitesse</span>
+            <span class="k">if</span> <span class="n">route</span><span class="o">.</span><span class="n">vehicules_presents</span><span class="p">:</span>
+                <span class="n">vitesses</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span><span class="o">.</span><span class="n">vitesse</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">route</span><span class="o">.</span><span class="n">vehicules_presents</span><span class="o">.</span><span class="n">values</span><span class="p">()]</span>
+                <span class="n">vitesse_moyenne</span> <span class="o">=</span> <span class="n">statistics</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">vitesses</span><span class="p">)</span>
+                <span class="n">reduction_vitesse</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">route</span><span class="o">.</span><span class="n">limite_vitesse</span> <span class="o">-</span> <span class="n">vitesse_moyenne</span><span class="p">)</span>
+                <span class="n">score_vitesse</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">reduction_vitesse</span> <span class="o">/</span> <span class="n">route</span><span class="o">.</span><span class="n">limite_vitesse</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">score_vitesse</span> <span class="o">=</span> <span class="mi">0</span>
+            
+            <span class="c1"># Prendre le score maximum entre densité et vitesse</span>
+            <span class="n">score_route</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">score_densite</span><span class="p">,</span> <span class="n">score_vitesse</span><span class="p">)</span>
+            <span class="n">scores_congestion</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">score_route</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">statistics</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">scores_congestion</span><span class="p">)</span> <span class="k">if</span> <span class="n">scores_congestion</span> <span class="k">else</span> <span class="mf">0.0</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">_calculer_statistiques_routes</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Calcule les statistiques détaillées pour chaque route.</span>
+<span class="sd">        </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            dict: Statistiques par route {nom_route: stats}</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">import</span><span class="w"> </span><span class="nn">statistics</span>
+        <span class="n">stats_routes</span> <span class="o">=</span> <span class="p">{}</span>
+        
+        <span class="k">for</span> <span class="n">nom_route</span><span class="p">,</span> <span class="n">route</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">reseau</span><span class="o">.</span><span class="n">routes</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">vehicules</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">route</span><span class="o">.</span><span class="n">vehicules_presents</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+            
+            <span class="k">if</span> <span class="n">vehicules</span><span class="p">:</span>
+                <span class="n">vitesses</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span><span class="o">.</span><span class="n">vitesse</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">vehicules</span><span class="p">]</span>
+                <span class="n">longueur_km</span> <span class="o">=</span> <span class="n">route</span><span class="o">.</span><span class="n">longueur</span> <span class="o">/</span> <span class="mi">1000</span>
+                <span class="n">utilisation</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">vehicules</span><span class="p">)</span> <span class="o">/</span> <span class="n">longueur_km</span> <span class="k">if</span> <span class="n">longueur_km</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mi">0</span>
+                
+                <span class="n">stats_routes</span><span class="p">[</span><span class="n">nom_route</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="s1">&#39;nb_vehicules&#39;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">vehicules</span><span class="p">),</span>
+                    <span class="s1">&#39;vitesse_moyenne&#39;</span><span class="p">:</span> <span class="n">statistics</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">vitesses</span><span class="p">)</span> <span class="k">if</span> <span class="n">vitesses</span> <span class="k">else</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s1">&#39;vitesse_max&#39;</span><span class="p">:</span> <span class="nb">max</span><span class="p">(</span><span class="n">vitesses</span><span class="p">)</span> <span class="k">if</span> <span class="n">vitesses</span> <span class="k">else</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s1">&#39;vitesse_min&#39;</span><span class="p">:</span> <span class="nb">min</span><span class="p">(</span><span class="n">vitesses</span><span class="p">)</span> <span class="k">if</span> <span class="n">vitesses</span> <span class="k">else</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s1">&#39;densite&#39;</span><span class="p">:</span> <span class="n">route</span><span class="o">.</span><span class="n">get_densite_trafic</span><span class="p">(),</span>
+                    <span class="s1">&#39;utilisation&#39;</span><span class="p">:</span> <span class="n">utilisation</span><span class="p">,</span>
+                    <span class="s1">&#39;limite_vitesse&#39;</span><span class="p">:</span> <span class="n">route</span><span class="o">.</span><span class="n">limite_vitesse</span><span class="p">,</span>
+                    <span class="s1">&#39;longueur&#39;</span><span class="p">:</span> <span class="n">route</span><span class="o">.</span><span class="n">longueur</span>
+                <span class="p">}</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">stats_routes</span><span class="p">[</span><span class="n">nom_route</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="s1">&#39;nb_vehicules&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s1">&#39;vitesse_moyenne&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s1">&#39;vitesse_max&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s1">&#39;vitesse_min&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s1">&#39;densite&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s1">&#39;utilisation&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s1">&#39;limite_vitesse&#39;</span><span class="p">:</span> <span class="n">route</span><span class="o">.</span><span class="n">limite_vitesse</span><span class="p">,</span>
+                    <span class="s1">&#39;longueur&#39;</span><span class="p">:</span> <span class="n">route</span><span class="o">.</span><span class="n">longueur</span>
+                <span class="p">}</span>
+        
+        <span class="k">return</span> <span class="n">stats_routes</span>
+    
+<div class="viewcode-block" id="Analyseur.calculer_statistiques_globales">
+<a class="viewcode-back" href="../api/analyseur/index.html#analyseur.Analyseur.calculer_statistiques_globales">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">calculer_statistiques_globales</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Calcule les statistiques globales sur toute la simulation.</span>
+<span class="sd">        </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            dict: Statistiques globales résumées</span>
+<span class="sd">        </span>
+<span class="sd">        Example:</span>
+<span class="sd">            &gt;&gt;&gt; stats_globales = analyseur.calculer_statistiques_globales()</span>
+<span class="sd">            &gt;&gt;&gt; print(f&quot;Congestion maximale: {stats_globales[&#39;congestion_max&#39;]}%&quot;)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">reseau</span><span class="p">,</span> <span class="s1">&#39;historique_trafic&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">reseau</span><span class="o">.</span><span class="n">historique_trafic</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">{}</span>
+        
+        <span class="c1"># Extraire les données de l&#39;historique</span>
+        <span class="n">total_vehicules</span> <span class="o">=</span> <span class="p">[</span><span class="n">etat</span><span class="p">[</span><span class="s1">&#39;total_vehicules&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">etat</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">reseau</span><span class="o">.</span><span class="n">historique_trafic</span><span class="p">]</span>
+        <span class="n">densites</span> <span class="o">=</span> <span class="p">[</span><span class="n">etat</span><span class="p">[</span><span class="s1">&#39;densite_moyenne&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">etat</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">reseau</span><span class="o">.</span><span class="n">historique_trafic</span><span class="p">]</span>
+        
+        <span class="n">stats_globales</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;max_vehicules&#39;</span><span class="p">:</span> <span class="nb">max</span><span class="p">(</span><span class="n">total_vehicules</span><span class="p">)</span> <span class="k">if</span> <span class="n">total_vehicules</span> <span class="k">else</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s1">&#39;min_vehicules&#39;</span><span class="p">:</span> <span class="nb">min</span><span class="p">(</span><span class="n">total_vehicules</span><span class="p">)</span> <span class="k">if</span> <span class="n">total_vehicules</span> <span class="k">else</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s1">&#39;vehicules_moyens&#39;</span><span class="p">:</span> <span class="n">statistics</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">total_vehicules</span><span class="p">)</span> <span class="k">if</span> <span class="n">total_vehicules</span> <span class="k">else</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s1">&#39;densite_max&#39;</span><span class="p">:</span> <span class="nb">max</span><span class="p">(</span><span class="n">densites</span><span class="p">)</span> <span class="k">if</span> <span class="n">densites</span> <span class="k">else</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s1">&#39;densite_moyenne&#39;</span><span class="p">:</span> <span class="n">statistics</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">densites</span><span class="p">)</span> <span class="k">if</span> <span class="n">densites</span> <span class="k">else</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s1">&#39;congestion_max&#39;</span><span class="p">:</span> <span class="nb">max</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">historique_congestion</span><span class="p">)</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">historique_congestion</span> <span class="k">else</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s1">&#39;congestion_moyenne&#39;</span><span class="p">:</span> <span class="n">statistics</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">historique_congestion</span><span class="p">)</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">historique_congestion</span> <span class="k">else</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="p">}</span>
+        
+        <span class="c1"># Calculer la vitesse moyenne globale</span>
+        <span class="n">vitesses_moyennes</span> <span class="o">=</span> <span class="p">[</span><span class="n">stats</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;vitesse_moyenne&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> 
+                           <span class="k">for</span> <span class="n">stats</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">reseau</span><span class="o">.</span><span class="n">historique_trafic</span> 
+                           <span class="k">if</span> <span class="s1">&#39;vitesse_moyenne&#39;</span> <span class="ow">in</span> <span class="n">stats</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">vitesses_moyennes</span><span class="p">:</span>
+            <span class="n">stats_globales</span><span class="p">[</span><span class="s1">&#39;vitesse_moyenne_globale&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">statistics</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">vitesses_moyennes</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">stats_globales</span><span class="p">[</span><span class="s1">&#39;vitesse_moyenne_globale&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        
+        <span class="k">return</span> <span class="n">stats_globales</span></div>
+
+    
+<div class="viewcode-block" id="Analyseur.identifier_zones_congestion">
+<a class="viewcode-back" href="../api/analyseur/index.html#analyseur.Analyseur.identifier_zones_congestion">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">identifier_zones_congestion</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">seuil</span><span class="o">=</span><span class="mf">70.0</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Identifie les routes avec un niveau de congestion élevé.</span>
+<span class="sd">        </span>
+<span class="sd">        Args:</span>
+<span class="sd">            seuil (float): Seuil de congestion en pourcentage (défaut: 70%)</span>
+<span class="sd">        </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            list: Liste des routes congestionnées avec leurs statistiques</span>
+<span class="sd">        </span>
+<span class="sd">        Example:</span>
+<span class="sd">            &gt;&gt;&gt; zones_congestion = analyseur.identifier_zones_congestion(seuil=80)</span>
+<span class="sd">            &gt;&gt;&gt; for zone in zones_congestion:</span>
+<span class="sd">            ...     print(f&quot;Route {zone[&#39;route&#39;]}: {zone[&#39;taux_congestion&#39;]}%&quot;)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">routes_congestionnees</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">stats_routes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calculer_statistiques_routes</span><span class="p">()</span>
+        
+        <span class="k">for</span> <span class="n">nom_route</span><span class="p">,</span> <span class="n">stats</span> <span class="ow">in</span> <span class="n">stats_routes</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">route</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">reseau</span><span class="o">.</span><span class="n">get_route</span><span class="p">(</span><span class="n">nom_route</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">route</span><span class="p">:</span>
+                <span class="k">continue</span>
+            
+            <span class="c1"># Calculer le taux de congestion pour cette route</span>
+            <span class="n">densite</span> <span class="o">=</span> <span class="n">stats</span><span class="p">[</span><span class="s1">&#39;densite&#39;</span><span class="p">]</span>
+            <span class="n">score_densite</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">densite</span> <span class="o">/</span> <span class="mf">50.0</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+            
+            <span class="n">reduction_vitesse</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">route</span><span class="o">.</span><span class="n">limite_vitesse</span> <span class="o">-</span> <span class="n">stats</span><span class="p">[</span><span class="s1">&#39;vitesse_moyenne&#39;</span><span class="p">])</span>
+            <span class="n">score_vitesse</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">reduction_vitesse</span> <span class="o">/</span> <span class="n">route</span><span class="o">.</span><span class="n">limite_vitesse</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+            
+            <span class="n">taux_congestion</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">score_densite</span><span class="p">,</span> <span class="n">score_vitesse</span><span class="p">)</span>
+            
+            <span class="k">if</span> <span class="n">taux_congestion</span> <span class="o">&gt;=</span> <span class="n">seuil</span><span class="p">:</span>
+                <span class="n">routes_congestionnees</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                    <span class="s1">&#39;route&#39;</span><span class="p">:</span> <span class="n">nom_route</span><span class="p">,</span>
+                    <span class="s1">&#39;taux_congestion&#39;</span><span class="p">:</span> <span class="n">taux_congestion</span><span class="p">,</span>
+                    <span class="s1">&#39;vehicules&#39;</span><span class="p">:</span> <span class="n">stats</span><span class="p">[</span><span class="s1">&#39;nb_vehicules&#39;</span><span class="p">],</span>
+                    <span class="s1">&#39;vitesse_moyenne&#39;</span><span class="p">:</span> <span class="n">stats</span><span class="p">[</span><span class="s1">&#39;vitesse_moyenne&#39;</span><span class="p">],</span>
+                    <span class="s1">&#39;limite_vitesse&#39;</span><span class="p">:</span> <span class="n">route</span><span class="o">.</span><span class="n">limite_vitesse</span><span class="p">,</span>
+                    <span class="s1">&#39;densite&#39;</span><span class="p">:</span> <span class="n">densite</span>
+                <span class="p">})</span>
+        
+        <span class="c1"># Trier par niveau de congestion décroissant</span>
+        <span class="n">routes_congestionnees</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;taux_congestion&#39;</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">routes_congestionnees</span></div>
+
+    
+<div class="viewcode-block" id="Analyseur.calculer_temps_parcours_moyen">
+<a class="viewcode-back" href="../api/analyseur/index.html#analyseur.Analyseur.calculer_temps_parcours_moyen">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">calculer_temps_parcours_moyen</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">longueur_parcours</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Calcule le temps de parcours moyen pour une distance donnée.</span>
+<span class="sd">        </span>
+<span class="sd">        Args:</span>
+<span class="sd">            longueur_parcours (float): Distance du parcours en mètres (défaut: 1000)</span>
+<span class="sd">        </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            float: Temps de parcours moyen en secondes</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">vitesse_moyenne</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calculer_vitesse_moyenne</span><span class="p">()</span>
+        
+        <span class="k">if</span> <span class="n">vitesse_moyenne</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">)</span>
+        
+        <span class="c1"># Convertir la vitesse moyenne en m/s</span>
+        <span class="n">vitesse_ms</span> <span class="o">=</span> <span class="n">vitesse_moyenne</span> <span class="o">/</span> <span class="mf">3.6</span>
+        
+        <span class="c1"># Calculer le temps de parcours</span>
+        <span class="n">temps_parcours</span> <span class="o">=</span> <span class="n">longueur_parcours</span> <span class="o">/</span> <span class="n">vitesse_ms</span>
+        
+        <span class="k">return</span> <span class="n">temps_parcours</span></div>
+
+    
+<div class="viewcode-block" id="Analyseur.generer_rapport_performance">
+<a class="viewcode-back" href="../api/analyseur/index.html#analyseur.Analyseur.generer_rapport_performance">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">generer_rapport_performance</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Génère un rapport complet de performance du réseau.</span>
+<span class="sd">        </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            dict: Rapport détaillé de performance</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">stats_globales</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculer_statistiques_globales</span><span class="p">()</span>
+        <span class="n">zones_congestion</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">identifier_zones_congestion</span><span class="p">()</span>
+        <span class="n">stats_actuelles</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculer_statistiques_tour</span><span class="p">()</span>
+        
+        <span class="n">rapport</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;performance_generale&#39;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">&#39;note&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calculer_note_performance</span><span class="p">(</span><span class="n">stats_globales</span><span class="p">),</span>
+                <span class="s1">&#39;vitesse_moyenne&#39;</span><span class="p">:</span> <span class="n">stats_globales</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;vitesse_moyenne_globale&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+                <span class="s1">&#39;congestion_moyenne&#39;</span><span class="p">:</span> <span class="n">stats_globales</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;congestion_moyenne&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+                <span class="s1">&#39;efficacite_reseau&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calculer_efficacite_reseau</span><span class="p">(</span><span class="n">stats_globales</span><span class="p">)</span>
+            <span class="p">},</span>
+            <span class="s1">&#39;zones_problematiques&#39;</span><span class="p">:</span> <span class="n">zones_congestion</span><span class="p">,</span>
+            <span class="s1">&#39;statistiques_actuelles&#39;</span><span class="p">:</span> <span class="n">stats_actuelles</span><span class="p">,</span>
+            <span class="s1">&#39;recommandations&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_generer_recommandations</span><span class="p">(</span><span class="n">zones_congestion</span><span class="p">)</span>
+        <span class="p">}</span>
+        
+        <span class="k">return</span> <span class="n">rapport</span></div>
+
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">_calculer_note_performance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stats_globales</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Calcule une note de performance basée sur les statistiques.&quot;&quot;&quot;</span>
+        <span class="n">congestion</span> <span class="o">=</span> <span class="n">stats_globales</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;congestion_moyenne&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="n">congestion</span> <span class="o">&lt;</span> <span class="mi">20</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;Excellent&quot;</span>
+        <span class="k">elif</span> <span class="n">congestion</span> <span class="o">&lt;</span> <span class="mi">40</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;Bon&quot;</span>
+        <span class="k">elif</span> <span class="n">congestion</span> <span class="o">&lt;</span> <span class="mi">60</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;Moyen&quot;</span>
+        <span class="k">elif</span> <span class="n">congestion</span> <span class="o">&lt;</span> <span class="mi">80</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;Médiocre&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;Critique&quot;</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">_calculer_efficacite_reseau</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stats_globales</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Calcule un score d&#39;efficacité du réseau (0-100).&quot;&quot;&quot;</span>
+        <span class="n">congestion</span> <span class="o">=</span> <span class="n">stats_globales</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;congestion_moyenne&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span> <span class="o">-</span> <span class="n">congestion</span><span class="p">)</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">_generer_recommandations</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zones_congestion</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Génère des recommandations basées sur les zones congestionnées.&quot;&quot;&quot;</span>
+        <span class="n">recommandations</span> <span class="o">=</span> <span class="p">[]</span>
+        
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">zones_congestion</span><span class="p">:</span>
+            <span class="n">recommandations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;✅ Le réseau fonctionne de manière optimale&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">recommandations</span>
+        
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">zones_congestion</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="n">recommandations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;🚨 Plusieurs routes sont congestionnées - envisager des itinéraires alternatifs&quot;</span><span class="p">)</span>
+        
+        <span class="k">for</span> <span class="n">zone</span> <span class="ow">in</span> <span class="n">zones_congestion</span><span class="p">[:</span><span class="mi">3</span><span class="p">]:</span>  <span class="c1"># Top 3 des zones problématiques</span>
+            <span class="n">rec</span> <span class="o">=</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;🛣️  Route </span><span class="si">{</span><span class="n">zone</span><span class="p">[</span><span class="s1">&#39;route&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">zone</span><span class="p">[</span><span class="s1">&#39;taux_congestion&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">% de congestion - &quot;</span>
+                   <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">zone</span><span class="p">[</span><span class="s1">&#39;vehicules&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> véhicules à </span><span class="si">{</span><span class="n">zone</span><span class="p">[</span><span class="s1">&#39;vitesse_moyenne&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> km/h&quot;</span><span class="p">)</span>
+            <span class="n">recommandations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rec</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">recommandations</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2025, Aya Zid.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

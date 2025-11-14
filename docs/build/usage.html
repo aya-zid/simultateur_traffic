@@ -1,0 +1,392 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Utilisation &mdash; Documentation Simulateur de Trafic Routier Intelligent 1</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=a12a2fe1"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/translations.js?v=e6b791cb"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="API Reference" href="api/index.html" />
+    <link rel="prev" title="Introduction" href="introduction.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Simulateur de Trafic Routier Intelligent
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contenu:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#presentation">Présentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#objectifs-du-projet">Objectifs du Projet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#cas-d-utilisation">Cas d’Utilisation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#architecture-technique">Architecture Technique</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Utilisation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#ligne-de-commande">Ligne de Commande</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#options-disponibles">Options Disponibles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exemples-d-utilisation">Exemples d’Utilisation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#utilisation-en-tant-que-module">Utilisation en tant que Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration-du-reseau">Configuration du Réseau</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#format-des-sorties">Format des Sorties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#visualisations">Visualisations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exemple-complet">Exemple Complet</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/index.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/conf/index.html">conf</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/conf/index.html#attributes">Attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/conf/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/conf/index.html#conf.project"><code class="docutils literal notranslate"><span class="pre">project</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/conf/index.html#conf.copyright"><code class="docutils literal notranslate"><span class="pre">copyright</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/conf/index.html#conf.author"><code class="docutils literal notranslate"><span class="pre">author</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/conf/index.html#conf.release"><code class="docutils literal notranslate"><span class="pre">release</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/conf/index.html#conf.extensions"><code class="docutils literal notranslate"><span class="pre">extensions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/conf/index.html#conf.autoapi_type"><code class="docutils literal notranslate"><span class="pre">autoapi_type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/conf/index.html#conf.autoapi_dirs"><code class="docutils literal notranslate"><span class="pre">autoapi_dirs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/conf/index.html#conf.autoapi_add_toctree_entry"><code class="docutils literal notranslate"><span class="pre">autoapi_add_toctree_entry</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/conf/index.html#conf.autoapi_root"><code class="docutils literal notranslate"><span class="pre">autoapi_root</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/conf/index.html#conf.autoapi_keep_files"><code class="docutils literal notranslate"><span class="pre">autoapi_keep_files</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/conf/index.html#conf.napoleon_google_docstring"><code class="docutils literal notranslate"><span class="pre">napoleon_google_docstring</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/conf/index.html#conf.napoleon_numpy_docstring"><code class="docutils literal notranslate"><span class="pre">napoleon_numpy_docstring</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/conf/index.html#conf.napoleon_include_init_with_doc"><code class="docutils literal notranslate"><span class="pre">napoleon_include_init_with_doc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/conf/index.html#conf.napoleon_include_private_with_doc"><code class="docutils literal notranslate"><span class="pre">napoleon_include_private_with_doc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/conf/index.html#conf.napoleon_include_special_with_doc"><code class="docutils literal notranslate"><span class="pre">napoleon_include_special_with_doc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/conf/index.html#conf.napoleon_use_admonition_for_examples"><code class="docutils literal notranslate"><span class="pre">napoleon_use_admonition_for_examples</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/conf/index.html#conf.napoleon_use_admonition_for_notes"><code class="docutils literal notranslate"><span class="pre">napoleon_use_admonition_for_notes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/conf/index.html#conf.napoleon_use_admonition_for_references"><code class="docutils literal notranslate"><span class="pre">napoleon_use_admonition_for_references</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/conf/index.html#conf.napoleon_use_ivar"><code class="docutils literal notranslate"><span class="pre">napoleon_use_ivar</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/conf/index.html#conf.napoleon_use_param"><code class="docutils literal notranslate"><span class="pre">napoleon_use_param</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/conf/index.html#conf.napoleon_use_rtype"><code class="docutils literal notranslate"><span class="pre">napoleon_use_rtype</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/conf/index.html#conf.html_theme"><code class="docutils literal notranslate"><span class="pre">html_theme</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/conf/index.html#conf.html_theme_options"><code class="docutils literal notranslate"><span class="pre">html_theme_options</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/conf/index.html#conf.html_static_path"><code class="docutils literal notranslate"><span class="pre">html_static_path</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/conf/index.html#conf.master_doc"><code class="docutils literal notranslate"><span class="pre">master_doc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/conf/index.html#conf.language"><code class="docutils literal notranslate"><span class="pre">language</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/conf/index.html#conf.todo_include_todos"><code class="docutils literal notranslate"><span class="pre">todo_include_todos</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/conf/index.html#conf.autoapi_options"><code class="docutils literal notranslate"><span class="pre">autoapi_options</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/route/index.html">route</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/route/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/route/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/route/index.html#route.Route"><code class="docutils literal notranslate"><span class="pre">Route</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/export/index.html">export</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/export/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/export/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/export/index.html#export.Export"><code class="docutils literal notranslate"><span class="pre">Export</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/reseau/index.html">reseau</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/reseau/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/reseau/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/reseau/index.html#reseau.ReseauRoutier"><code class="docutils literal notranslate"><span class="pre">ReseauRoutier</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/vehicule/index.html">vehicule</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/vehicule/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/vehicule/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/vehicule/index.html#vehicule.Vehicule"><code class="docutils literal notranslate"><span class="pre">Vehicule</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/analyseur/index.html">analyseur</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/analyseur/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/analyseur/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/analyseur/index.html#analyseur.Analyseur"><code class="docutils literal notranslate"><span class="pre">Analyseur</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/affichage/index.html">affichage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/affichage/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/affichage/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/affichage/index.html#affichage.Affichage"><code class="docutils literal notranslate"><span class="pre">Affichage</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/simulateur/index.html">simulateur</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/simulateur/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/simulateur/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/simulateur/index.html#simulateur.Simulateur"><code class="docutils literal notranslate"><span class="pre">Simulateur</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/test_simulateur/index.html">test_simulateur</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/test_simulateur/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/test_simulateur/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/test_simulateur/index.html#test_simulateur.TestVehicule"><code class="docutils literal notranslate"><span class="pre">TestVehicule</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/test_simulateur/index.html#test_simulateur.TestRoute"><code class="docutils literal notranslate"><span class="pre">TestRoute</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/test_simulateur/index.html#test_simulateur.TestReseauRoutier"><code class="docutils literal notranslate"><span class="pre">TestReseauRoutier</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/simulateur_trafic/index.html">simulateur_trafic</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/simulateur_trafic/index.html#submodules">Submodules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/simulateur_trafic/main/index.html">simulateur_trafic.main</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Exemples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#exemple-basique">Exemple Basique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#exemple-avec-configuration-personnalisee">Exemple avec Configuration Personnalisée</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#exemple-avec-analyse-avancee">Exemple avec Analyse Avancée</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#exemple-avec-export-des-donnees">Exemple avec Export des Données</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#exemple-avec-visualisation">Exemple avec Visualisation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#scripts-d-exemple">Scripts d’Exemple</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Simulateur de Trafic Routier Intelligent</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Utilisation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/usage.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="utilisation">
+<h1>Utilisation<a class="headerlink" href="#utilisation" title="Lien vers cette rubrique"></a></h1>
+<section id="ligne-de-commande">
+<h2>Ligne de Commande<a class="headerlink" href="#ligne-de-commande" title="Lien vers cette rubrique"></a></h2>
+<p>Le simulateur peut être lancé directement avec des paramètres:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>main.py<span class="w"> </span>--tours<span class="w"> </span><span class="m">100</span><span class="w"> </span>--deltat<span class="w"> </span><span class="m">30</span><span class="w"> </span>--export-all<span class="w"> </span>--real-time-display
+</pre></div>
+</div>
+<section id="options-disponibles">
+<h3>Options Disponibles<a class="headerlink" href="#options-disponibles" title="Lien vers cette rubrique"></a></h3>
+</section>
+<section id="exemples-d-utilisation">
+<h3>Exemples d’Utilisation<a class="headerlink" href="#exemples-d-utilisation" title="Lien vers cette rubrique"></a></h3>
+<p><strong>Simulation rapide avec visualisation</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>main.py<span class="w"> </span>-t<span class="w"> </span><span class="m">50</span><span class="w"> </span>-d<span class="w"> </span><span class="m">60</span><span class="w"> </span>--real-time-display
+</pre></div>
+</div>
+<p><strong>Simulation longue avec export complet</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>main.py<span class="w"> </span>-t<span class="w"> </span><span class="m">200</span><span class="w"> </span>-d<span class="w"> </span><span class="m">30</span><span class="w"> </span>--export-all<span class="w"> </span>--export-dir<span class="w"> </span><span class="s2">&quot;mes_resultats&quot;</span>
+</pre></div>
+</div>
+<p><strong>Mode silencieux pour traitement par lots</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>main.py<span class="w"> </span>-t<span class="w"> </span><span class="m">100</span><span class="w"> </span>--no-progress<span class="w"> </span>--no-graph
+</pre></div>
+</div>
+</section>
+</section>
+<section id="utilisation-en-tant-que-module">
+<h2>Utilisation en tant que Module<a class="headerlink" href="#utilisation-en-tant-que-module" title="Lien vers cette rubrique"></a></h2>
+<p>Le simulateur peut aussi être importé comme module Python:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">simulateur_trafic</span><span class="w"> </span><span class="kn">import</span> <span class="n">Simulateur</span><span class="p">,</span> <span class="n">Analyseur</span><span class="p">,</span> <span class="n">Affichage</span>
+
+<span class="c1"># Initialisation</span>
+<span class="n">simulateur</span> <span class="o">=</span> <span class="n">Simulateur</span><span class="p">(</span><span class="s2">&quot;config/reseau.json&quot;</span><span class="p">)</span>
+
+<span class="c1"># Simulation</span>
+<span class="n">simulateur</span><span class="o">.</span><span class="n">lancer_simulation</span><span class="p">(</span><span class="n">n_tours</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">delta_t</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
+
+<span class="c1"># Analyse</span>
+<span class="n">rapport</span> <span class="o">=</span> <span class="n">simulateur</span><span class="o">.</span><span class="n">analyseur</span><span class="o">.</span><span class="n">generer_rapport_performance</span><span class="p">()</span>
+
+<span class="c1"># Visualisation</span>
+<span class="n">affichage</span> <span class="o">=</span> <span class="n">Affichage</span><span class="p">()</span>
+<span class="n">affichage</span><span class="o">.</span><span class="n">afficher_rapport_performance</span><span class="p">(</span><span class="n">rapport</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="configuration-du-reseau">
+<h2>Configuration du Réseau<a class="headerlink" href="#configuration-du-reseau" title="Lien vers cette rubrique"></a></h2>
+<p>Le fichier de configuration JSON définit le réseau routier:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;routes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;nom&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Autoroute_A1&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;longueur&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;limite_vitesse&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">130</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;intersections&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Autoroute_A1&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;destinations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Route_B1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Route_C2&quot;</span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;vehicules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;route&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Autoroute_A1&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;position&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;vitesse&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">110</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="format-des-sorties">
+<h2>Format des Sorties<a class="headerlink" href="#format-des-sorties" title="Lien vers cette rubrique"></a></h2>
+<p>Le simulateur génère plusieurs types de sorties:</p>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">Formats de Sortie</span><a class="headerlink" href="#id1" title="Lien vers ce tableau"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Format</p></th>
+<th class="head"><p>Fichier</p></th>
+<th class="head"><p>Usage</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>CSV</p></td>
+<td><p>statistiques_simulation.csv</p></td>
+<td><p>Analyse avec Excel/R</p></td>
+</tr>
+<tr class="row-odd"><td><p>JSON</p></td>
+<td><p>donnees_simulation.json</p></td>
+<td><p>Traitement programmatique</p></td>
+</tr>
+<tr class="row-even"><td><p>Excel</p></td>
+<td><p>rapport_simulation.xlsx</p></td>
+<td><p>Rapport professionnel</p></td>
+</tr>
+<tr class="row-odd"><td><p>PNG</p></td>
+<td><p>evolution_statistiques.png</p></td>
+<td><p>Présentations</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="visualisations">
+<h2>Visualisations<a class="headerlink" href="#visualisations" title="Lien vers cette rubrique"></a></h2>
+<p>Le simulateur génère plusieurs types de graphiques:</p>
+<ul class="simple">
+<li><p><strong>Évolution temporelle</strong> : Statistiques sur la durée de simulation</p></li>
+<li><p><strong>Carte du réseau</strong> : Représentation visuelle du réseau routier</p></li>
+<li><p><strong>Comparaison routes</strong> : Performance comparative des différentes routes</p></li>
+</ul>
+</section>
+<section id="exemple-complet">
+<h2>Exemple Complet<a class="headerlink" href="#exemple-complet" title="Lien vers cette rubrique"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exemple complet d&#39;utilisation</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">simulateur_trafic.core.simulateur</span><span class="w"> </span><span class="kn">import</span> <span class="n">Simulateur</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">simulateur_trafic.io_utils.affichage</span><span class="w"> </span><span class="kn">import</span> <span class="n">Affichage</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">simulateur_trafic.io_utils.export</span><span class="w"> </span><span class="kn">import</span> <span class="n">Export</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">simulation_complete</span><span class="p">():</span>
+    <span class="c1"># Initialisation</span>
+    <span class="n">simulateur</span> <span class="o">=</span> <span class="n">Simulateur</span><span class="p">(</span><span class="s2">&quot;data/config_reseau.json&quot;</span><span class="p">)</span>
+    <span class="n">affichage</span> <span class="o">=</span> <span class="n">Affichage</span><span class="p">()</span>
+    <span class="n">export</span> <span class="o">=</span> <span class="n">Export</span><span class="p">()</span>
+
+    <span class="c1"># Simulation</span>
+    <span class="n">simulateur</span><span class="o">.</span><span class="n">lancer_simulation</span><span class="p">(</span><span class="n">n_tours</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">delta_t</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+
+    <span class="c1"># Résultats</span>
+    <span class="n">rapport</span> <span class="o">=</span> <span class="n">simulateur</span><span class="o">.</span><span class="n">analyseur</span><span class="o">.</span><span class="n">generer_rapport_performance</span><span class="p">()</span>
+    <span class="n">affichage</span><span class="o">.</span><span class="n">afficher_rapport_performance</span><span class="p">(</span><span class="n">rapport</span><span class="p">)</span>
+
+    <span class="c1"># Export</span>
+    <span class="n">export</span><span class="o">.</span><span class="n">exporter_csv</span><span class="p">(</span><span class="n">simulateur</span><span class="o">.</span><span class="n">historique_stats</span><span class="p">)</span>
+    <span class="n">affichage</span><span class="o">.</span><span class="n">generer_graphique_evolution</span><span class="p">(</span><span class="n">simulateur</span><span class="o">.</span><span class="n">historique_stats</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">simulateur</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="introduction.html" class="btn btn-neutral float-left" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="api/index.html" class="btn btn-neutral float-right" title="API Reference" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2025, Aya Zid.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,559 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>simulateur_trafic.main &mdash; Documentation Simulateur de Trafic Routier Intelligent 1</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=a12a2fe1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/translations.js?v=e6b791cb"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Recherche" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Simulateur de Trafic Routier Intelligent
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contenu:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html#presentation">Présentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html#objectifs-du-projet">Objectifs du Projet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html#cas-d-utilisation">Cas d’Utilisation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html#architecture-technique">Architecture Technique</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Utilisation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../usage.html#ligne-de-commande">Ligne de Commande</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../usage.html#options-disponibles">Options Disponibles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage.html#exemples-d-utilisation">Exemples d’Utilisation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage.html#utilisation-en-tant-que-module">Utilisation en tant que Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage.html#configuration-du-reseau">Configuration du Réseau</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage.html#format-des-sorties">Format des Sorties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage.html#visualisations">Visualisations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage.html#exemple-complet">Exemple Complet</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../api/conf/index.html">conf</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api/conf/index.html#attributes">Attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/conf/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/conf/index.html#conf.project"><code class="docutils literal notranslate"><span class="pre">project</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/conf/index.html#conf.copyright"><code class="docutils literal notranslate"><span class="pre">copyright</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/conf/index.html#conf.author"><code class="docutils literal notranslate"><span class="pre">author</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/conf/index.html#conf.release"><code class="docutils literal notranslate"><span class="pre">release</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/conf/index.html#conf.extensions"><code class="docutils literal notranslate"><span class="pre">extensions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/conf/index.html#conf.autoapi_type"><code class="docutils literal notranslate"><span class="pre">autoapi_type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/conf/index.html#conf.autoapi_dirs"><code class="docutils literal notranslate"><span class="pre">autoapi_dirs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/conf/index.html#conf.autoapi_add_toctree_entry"><code class="docutils literal notranslate"><span class="pre">autoapi_add_toctree_entry</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/conf/index.html#conf.autoapi_root"><code class="docutils literal notranslate"><span class="pre">autoapi_root</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/conf/index.html#conf.autoapi_keep_files"><code class="docutils literal notranslate"><span class="pre">autoapi_keep_files</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/conf/index.html#conf.napoleon_google_docstring"><code class="docutils literal notranslate"><span class="pre">napoleon_google_docstring</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/conf/index.html#conf.napoleon_numpy_docstring"><code class="docutils literal notranslate"><span class="pre">napoleon_numpy_docstring</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/conf/index.html#conf.napoleon_include_init_with_doc"><code class="docutils literal notranslate"><span class="pre">napoleon_include_init_with_doc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/conf/index.html#conf.napoleon_include_private_with_doc"><code class="docutils literal notranslate"><span class="pre">napoleon_include_private_with_doc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/conf/index.html#conf.napoleon_include_special_with_doc"><code class="docutils literal notranslate"><span class="pre">napoleon_include_special_with_doc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/conf/index.html#conf.napoleon_use_admonition_for_examples"><code class="docutils literal notranslate"><span class="pre">napoleon_use_admonition_for_examples</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/conf/index.html#conf.napoleon_use_admonition_for_notes"><code class="docutils literal notranslate"><span class="pre">napoleon_use_admonition_for_notes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/conf/index.html#conf.napoleon_use_admonition_for_references"><code class="docutils literal notranslate"><span class="pre">napoleon_use_admonition_for_references</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/conf/index.html#conf.napoleon_use_ivar"><code class="docutils literal notranslate"><span class="pre">napoleon_use_ivar</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/conf/index.html#conf.napoleon_use_param"><code class="docutils literal notranslate"><span class="pre">napoleon_use_param</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/conf/index.html#conf.napoleon_use_rtype"><code class="docutils literal notranslate"><span class="pre">napoleon_use_rtype</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/conf/index.html#conf.html_theme"><code class="docutils literal notranslate"><span class="pre">html_theme</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/conf/index.html#conf.html_theme_options"><code class="docutils literal notranslate"><span class="pre">html_theme_options</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/conf/index.html#conf.html_static_path"><code class="docutils literal notranslate"><span class="pre">html_static_path</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/conf/index.html#conf.master_doc"><code class="docutils literal notranslate"><span class="pre">master_doc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/conf/index.html#conf.language"><code class="docutils literal notranslate"><span class="pre">language</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/conf/index.html#conf.todo_include_todos"><code class="docutils literal notranslate"><span class="pre">todo_include_todos</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/conf/index.html#conf.autoapi_options"><code class="docutils literal notranslate"><span class="pre">autoapi_options</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/route/index.html">route</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api/route/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/route/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/route/index.html#route.Route"><code class="docutils literal notranslate"><span class="pre">Route</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/export/index.html">export</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api/export/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/export/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/export/index.html#export.Export"><code class="docutils literal notranslate"><span class="pre">Export</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/reseau/index.html">reseau</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api/reseau/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/reseau/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/reseau/index.html#reseau.ReseauRoutier"><code class="docutils literal notranslate"><span class="pre">ReseauRoutier</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/vehicule/index.html">vehicule</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api/vehicule/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/vehicule/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/vehicule/index.html#vehicule.Vehicule"><code class="docutils literal notranslate"><span class="pre">Vehicule</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/analyseur/index.html">analyseur</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api/analyseur/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/analyseur/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/analyseur/index.html#analyseur.Analyseur"><code class="docutils literal notranslate"><span class="pre">Analyseur</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/affichage/index.html">affichage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api/affichage/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/affichage/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/affichage/index.html#affichage.Affichage"><code class="docutils literal notranslate"><span class="pre">Affichage</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/simulateur/index.html">simulateur</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api/simulateur/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/simulateur/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/simulateur/index.html#simulateur.Simulateur"><code class="docutils literal notranslate"><span class="pre">Simulateur</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/test_simulateur/index.html">test_simulateur</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api/test_simulateur/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/test_simulateur/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/test_simulateur/index.html#test_simulateur.TestVehicule"><code class="docutils literal notranslate"><span class="pre">TestVehicule</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/test_simulateur/index.html#test_simulateur.TestRoute"><code class="docutils literal notranslate"><span class="pre">TestRoute</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/test_simulateur/index.html#test_simulateur.TestReseauRoutier"><code class="docutils literal notranslate"><span class="pre">TestReseauRoutier</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/simulateur_trafic/index.html">simulateur_trafic</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api/simulateur_trafic/index.html#submodules">Submodules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../api/simulateur_trafic/main/index.html">simulateur_trafic.main</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples.html">Exemples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#exemple-basique">Exemple Basique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#exemple-avec-configuration-personnalisee">Exemple avec Configuration Personnalisée</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#exemple-avec-analyse-avancee">Exemple avec Analyse Avancée</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#exemple-avec-export-des-donnees">Exemple avec Export des Données</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#exemple-avec-visualisation">Exemple avec Visualisation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#scripts-d-exemple">Scripts d’Exemple</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Simulateur de Trafic Routier Intelligent</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Code du module</a></li>
+      <li class="breadcrumb-item active">simulateur_trafic.main</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Code source de simulateur_trafic.main</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/env python3</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Module principal - Point d&#39;entrée de l&#39;application de simulation de trafic</span>
+
+<span class="sd">Ce module lance la simulation de trafic routier avec les paramètres spécifiés.</span>
+<span class="sd">Il intègre l&#39;affichage graphique et l&#39;export des résultats.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">argparse</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+
+<span class="c1"># Ajouter le répertoire parent au chemin pour importer les modules</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)))</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">core.simulateur</span><span class="w"> </span><span class="kn">import</span> <span class="n">Simulateur</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">io_utils.affichage</span><span class="w"> </span><span class="kn">import</span> <span class="n">Affichage</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">io_utils.export</span><span class="w"> </span><span class="kn">import</span> <span class="n">Export</span>
+
+<div class="viewcode-block" id="main">
+<a class="viewcode-back" href="../../api/simulateur_trafic/main/index.html#simulateur_trafic.main.main">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Fonction principale qui lance la simulation de trafic avec visualisation.</span>
+<span class="sd">    </span>
+<span class="sd">    Cette fonction parse les arguments de ligne de commande,</span>
+<span class="sd">    initialise le simulateur, les modules d&#39;affichage et d&#39;export,</span>
+<span class="sd">    et lance la simulation complète.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Simulateur de Trafic Routier Intelligent&quot;</span><span class="p">,</span>
+        <span class="n">formatter_class</span><span class="o">=</span><span class="n">argparse</span><span class="o">.</span><span class="n">RawDescriptionHelpFormatter</span><span class="p">,</span>
+        <span class="n">epilog</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Exemples d&#39;utilisation:</span>
+<span class="s2">  python main.py                                  # Simulation par défaut (60 tours de 60s)</span>
+<span class="s2">  python main.py -t 120 -d 30                    # 120 tours de 30 secondes</span>
+<span class="s2">  python main.py -c data/config_reseau.json      # Configuration personnalisée</span>
+<span class="s2">  python main.py --no-progress --no-graph        # Sans progression ni graphiques</span>
+<span class="s2">  python main.py --export-all                    # Export complet des résultats</span>
+<span class="s2">  python main.py --real-time-display             # Affichage temps réel</span>
+<span class="s2">        &quot;&quot;&quot;</span>
+    <span class="p">)</span>
+    
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s1">&#39;-c&#39;</span><span class="p">,</span> <span class="s1">&#39;--config&#39;</span><span class="p">,</span>
+        <span class="n">default</span><span class="o">=</span><span class="s1">&#39;data/config_reseau.json&#39;</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Fichier de configuration JSON (défaut: data/config_reseau.json)&#39;</span>
+    <span class="p">)</span>
+    
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s1">&#39;-t&#39;</span><span class="p">,</span> <span class="s1">&#39;--tours&#39;</span><span class="p">,</span>
+        <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span>
+        <span class="n">default</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Nombre de tours de simulation (défaut: 60)&#39;</span>
+    <span class="p">)</span>
+    
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s1">&#39;-d&#39;</span><span class="p">,</span> <span class="s1">&#39;--deltat&#39;</span><span class="p">,</span>
+        <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span>
+        <span class="n">default</span><span class="o">=</span><span class="mf">60.0</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Durée de chaque tour en secondes (défaut: 60.0)&#39;</span>
+    <span class="p">)</span>
+    
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s1">&#39;--no-progress&#39;</span><span class="p">,</span>
+        <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Désactiver l</span><span class="se">\&#39;</span><span class="s1">affichage de la progression&#39;</span>
+    <span class="p">)</span>
+    
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s1">&#39;--no-graph&#39;</span><span class="p">,</span>
+        <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Désactiver les graphiques à la fin de la simulation&#39;</span>
+    <span class="p">)</span>
+    
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s1">&#39;--export-all&#39;</span><span class="p">,</span>
+        <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Exporter toutes les données (CSV, JSON, Excel)&#39;</span>
+    <span class="p">)</span>
+    
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s1">&#39;--real-time-display&#39;</span><span class="p">,</span>
+        <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Afficher le tableau de bord en temps réel&#39;</span>
+    <span class="p">)</span>
+    
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s1">&#39;--export-dir&#39;</span><span class="p">,</span>
+        <span class="n">default</span><span class="o">=</span><span class="s1">&#39;exports&#39;</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Répertoire pour les exports (défaut: exports)&#39;</span>
+    <span class="p">)</span>
+    
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s1">&#39;-v&#39;</span><span class="p">,</span> <span class="s1">&#39;--verbose&#39;</span><span class="p">,</span>
+        <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Mode verbeux avec plus de détails&#39;</span>
+    <span class="p">)</span>
+    
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+    
+    <span class="c1"># Afficher les paramètres de simulation</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">70</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;🚦 SIMULATEUR DE TRAFIC ROUTIER INTELLIGENT&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">70</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;📁 Configuration: </span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">config</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;🔄 Tours de simulation: </span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">tours</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;⏱️  Durée par tour: </span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">deltat</span><span class="si">}</span><span class="s2"> secondes&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;⏰ Durée totale: </span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">tours</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">args</span><span class="o">.</span><span class="n">deltat</span><span class="si">}</span><span class="s2"> secondes&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;📊 Graphiques: </span><span class="si">{</span><span class="s1">&#39;Non&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">args</span><span class="o">.</span><span class="n">no_graph</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;Oui&#39;</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;💾 Export données: </span><span class="si">{</span><span class="s1">&#39;Oui&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">args</span><span class="o">.</span><span class="n">export_all</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;Non&#39;</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;📈 Affichage temps réel: </span><span class="si">{</span><span class="s1">&#39;Oui&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">args</span><span class="o">.</span><span class="n">real_time_display</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;Non&#39;</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">70</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Vérifier si le fichier de configuration existe</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">config</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;⚠️  Fichier de configuration </span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">config</span><span class="si">}</span><span class="s2"> non trouvé.&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   Le simulateur démarrera avec un réseau vide.&quot;</span><span class="p">)</span>
+            <span class="c1"># Créer une configuration par défaut si le fichier n&#39;existe pas</span>
+            <span class="kn">from</span><span class="w"> </span><span class="nn">data.config_reseau</span><span class="w"> </span><span class="kn">import</span> <span class="n">creer_configuration_defaut</span><span class="p">,</span> <span class="n">sauvegarder_configuration</span>
+            <span class="n">config</span> <span class="o">=</span> <span class="n">creer_configuration_defaut</span><span class="p">()</span>
+            <span class="n">sauvegarder_configuration</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">config</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ Configuration par défaut créée: </span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">config</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+        <span class="c1"># Initialiser les composants</span>
+        <span class="n">simulateur</span> <span class="o">=</span> <span class="n">Simulateur</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">config</span><span class="p">)</span>
+        <span class="n">affichage</span> <span class="o">=</span> <span class="n">Affichage</span><span class="p">()</span>
+        <span class="n">export</span> <span class="o">=</span> <span class="n">Export</span><span class="p">(</span><span class="n">repertoire_sortie</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">export_dir</span><span class="p">)</span>
+        
+        <span class="c1"># Lancer la simulation avec les paramètres</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">🚀 Démarrage de la simulation...&quot;</span><span class="p">)</span>
+        <span class="n">simulateur</span><span class="o">.</span><span class="n">lancer_simulation</span><span class="p">(</span>
+            <span class="n">n_tours</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">tours</span><span class="p">,</span>
+            <span class="n">delta_t</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">deltat</span><span class="p">,</span>
+            <span class="n">afficher_progression</span><span class="o">=</span><span class="ow">not</span> <span class="n">args</span><span class="o">.</span><span class="n">no_progress</span><span class="p">,</span>
+            <span class="n">affichage_temps_reel</span><span class="o">=</span><span class="n">affichage</span> <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">real_time_display</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="p">)</span>
+        
+        <span class="c1"># AFFICHAGE DES RÉSULTATS</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">70</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;📈 GÉNÉRATION DES RÉSULTATS&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">70</span><span class="p">)</span>
+        
+        <span class="c1"># 1. Afficher le rapport de performance</span>
+        <span class="n">rapport_performance</span> <span class="o">=</span> <span class="n">simulateur</span><span class="o">.</span><span class="n">analyseur</span><span class="o">.</span><span class="n">generer_rapport_performance</span><span class="p">()</span>
+        <span class="n">affichage</span><span class="o">.</span><span class="n">afficher_rapport_performance</span><span class="p">(</span><span class="n">rapport_performance</span><span class="p">)</span>
+        
+        <span class="c1"># 2. Générer les graphiques (sauf si désactivé)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">args</span><span class="o">.</span><span class="n">no_graph</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">🎨 Génération des graphiques...&quot;</span><span class="p">)</span>
+            
+            <span class="c1"># Graphique d&#39;évolution temporelle</span>
+            <span class="n">affichage</span><span class="o">.</span><span class="n">generer_graphique_evolution</span><span class="p">(</span>
+                <span class="n">simulateur</span><span class="o">.</span><span class="n">historique_stats</span><span class="p">,</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">export_dir</span><span class="p">,</span> <span class="s2">&quot;evolution_statistiques.png&quot;</span><span class="p">)</span>
+            <span class="p">)</span>
+            
+            <span class="c1"># Carte du réseau avec flux</span>
+            <span class="n">affichage</span><span class="o">.</span><span class="n">generer_carte_flux</span><span class="p">(</span>
+                <span class="n">simulateur</span><span class="o">.</span><span class="n">reseau</span><span class="p">,</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">export_dir</span><span class="p">,</span> <span class="s2">&quot;carte_reseau.png&quot;</span><span class="p">)</span>
+            <span class="p">)</span>
+            
+            <span class="c1"># Graphique de comparaison des routes - USE CURRENT ROUTE STATS</span>
+            <span class="c1"># current_route_stats = simulateur.analyseur._calculer_statistiques_routes()</span>
+            <span class="c1"># print(&quot;DEBUG: current_route_stats =&quot;, current_route_stats)  # &lt;-- AJOUTEZ CETTE LIGNE</span>
+            <span class="c1"># if current_route_stats:</span>
+            <span class="c1">#     affichage.generer_graphique_comparaison_routes(</span>
+            <span class="c1">#         current_route_stats,</span>
+            <span class="c1">#         os.path.join(args.export_dir, &quot;comparaison_routes.png&quot;)</span>
+            <span class="c1">#     )</span>
+            <span class="c1"># else:</span>
+            <span class="c1">#     print(&quot;⚠️  Aucune statistique de route disponible pour la comparaison&quot;)</span>
+            
+            <span class="c1"># Find the last tour with vehicles for each route</span>
+            <span class="k">def</span><span class="w"> </span><span class="nf">get_last_nonzero_route_stats</span><span class="p">(</span><span class="n">historique_stats</span><span class="p">):</span>
+                <span class="k">for</span> <span class="n">stats</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">historique_stats</span><span class="p">):</span>
+                    <span class="n">routes</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;routes&#39;</span><span class="p">,</span> <span class="p">{})</span>
+                    <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="s1">&#39;nb_vehicules&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">routes</span><span class="o">.</span><span class="n">values</span><span class="p">()):</span>
+                        <span class="k">return</span> <span class="n">routes</span>
+                <span class="k">return</span> <span class="n">historique_stats</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;routes&#39;</span><span class="p">,</span> <span class="p">{})</span> <span class="k">if</span> <span class="n">historique_stats</span> <span class="k">else</span> <span class="p">{}</span>
+
+            <span class="c1"># Use this for your graph</span>
+            <span class="n">current_route_stats</span> <span class="o">=</span> <span class="n">get_last_nonzero_route_stats</span><span class="p">(</span><span class="n">simulateur</span><span class="o">.</span><span class="n">historique_stats</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DEBUG: last_nonzero_route_stats =&quot;</span><span class="p">,</span> <span class="n">current_route_stats</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">current_route_stats</span> <span class="ow">and</span> <span class="nb">any</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="s1">&#39;nb_vehicules&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">current_route_stats</span><span class="o">.</span><span class="n">values</span><span class="p">()):</span>
+                <span class="n">affichage</span><span class="o">.</span><span class="n">generer_graphique_comparaison_routes</span><span class="p">(</span>
+                    <span class="n">current_route_stats</span><span class="p">,</span>
+                    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">export_dir</span><span class="p">,</span> <span class="s2">&quot;comparaison_routes.png&quot;</span><span class="p">)</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;⚠️  Aucune statistique de route disponible pour la comparaison&quot;</span><span class="p">)</span>
+        
+        <span class="c1"># 3. Exporter les données (si demandé)</span>
+        <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">export_all</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">💾 Export des données...&quot;</span><span class="p">)</span>
+            
+            <span class="c1"># Export CSV des statistiques</span>
+            <span class="n">export</span><span class="o">.</span><span class="n">exporter_csv</span><span class="p">(</span><span class="n">simulateur</span><span class="o">.</span><span class="n">historique_stats</span><span class="p">,</span> <span class="s2">&quot;statistiques_simulation.csv&quot;</span><span class="p">)</span>
+            
+            <span class="c1"># Export JSON complet</span>
+            <span class="n">export</span><span class="o">.</span><span class="n">exporter_json</span><span class="p">(</span><span class="n">simulateur</span><span class="o">.</span><span class="n">historique_stats</span><span class="p">,</span> <span class="s2">&quot;donnees_simulation.json&quot;</span><span class="p">)</span>
+            
+            <span class="c1"># Export Excel avec plusieurs onglets</span>
+            <span class="n">export</span><span class="o">.</span><span class="n">exporter_excel</span><span class="p">(</span><span class="n">simulateur</span><span class="o">.</span><span class="n">historique_stats</span><span class="p">,</span> <span class="s2">&quot;rapport_simulation.xlsx&quot;</span><span class="p">)</span>
+            
+            <span class="c1"># Rapport complet</span>
+            <span class="n">export</span><span class="o">.</span><span class="n">generer_rapport_complet</span><span class="p">(</span><span class="n">simulateur</span><span class="p">,</span> <span class="s2">&quot;rapport_complet.json&quot;</span><span class="p">)</span>
+            
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ Toutes les données exportées dans le dossier: </span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">export_dir</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+        <span class="c1"># 4. Afficher les statistiques finales si mode verbeux</span>
+        <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">verbose</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;🔍 STATISTIQUES DÉTAILLÉES FINALES&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">simulateur</span><span class="o">.</span><span class="n">historique_stats</span><span class="p">:</span>
+                <span class="n">dernier_tour</span> <span class="o">=</span> <span class="n">simulateur</span><span class="o">.</span><span class="n">historique_stats</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+                <span class="n">stats_globales</span> <span class="o">=</span> <span class="n">simulateur</span><span class="o">.</span><span class="n">analyseur</span><span class="o">.</span><span class="n">calculer_statistiques_globales</span><span class="p">()</span>
+                
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;📊 Vitesse moyenne finale: </span><span class="si">{</span><span class="n">dernier_tour</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;vitesse_moyenne&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> km/h&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;🚦 Densité moyenne finale: </span><span class="si">{</span><span class="n">dernier_tour</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;densite_moyenne&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> véh/km&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;🚨 Taux de congestion final: </span><span class="si">{</span><span class="n">dernier_tour</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;taux_congestion&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;🚗 Véhicules maximum: </span><span class="si">{</span><span class="n">stats_globales</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;max_vehicules&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;⭐ Performance globale: </span><span class="si">{</span><span class="n">stats_globales</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;vitesse_moyenne_globale&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> km/h&quot;</span><span class="p">)</span>
+                
+                <span class="c1"># Afficher les zones de congestion</span>
+                <span class="n">zones_congestion</span> <span class="o">=</span> <span class="n">simulateur</span><span class="o">.</span><span class="n">analyseur</span><span class="o">.</span><span class="n">identifier_zones_congestion</span><span class="p">(</span><span class="n">seuil</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">zones_congestion</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">🔴 Zones congestionnées (&gt;50%):&quot;</span><span class="p">)</span>
+                    <span class="k">for</span> <span class="n">zone</span> <span class="ow">in</span> <span class="n">zones_congestion</span><span class="p">[:</span><span class="mi">3</span><span class="p">]:</span>
+                        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   • </span><span class="si">{</span><span class="n">zone</span><span class="p">[</span><span class="s1">&#39;route&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">zone</span><span class="p">[</span><span class="s1">&#39;taux_congestion&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+        
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">70</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✅ SIMULATION TERMINÉE AVEC SUCCÈS&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">70</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="mi">0</span>
+        
+    <span class="k">except</span> <span class="ne">FileNotFoundError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;❌ Erreur: Fichier non trouvé - </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">⏹️  Simulation interrompue par l&#39;utilisateur&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mi">130</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;❌ Erreur inattendue: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">verbose</span><span class="p">:</span>
+            <span class="kn">import</span><span class="w"> </span><span class="nn">traceback</span>
+            <span class="n">traceback</span><span class="o">.</span><span class="n">print_exc</span><span class="p">()</span>
+        <span class="k">return</span> <span class="mi">1</span></div>
+
+
+<div class="viewcode-block" id="demo_rapide">
+<a class="viewcode-back" href="../../api/simulateur_trafic/main/index.html#simulateur_trafic.main.demo_rapide">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">demo_rapide</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Fonction de démonstration rapide pour tester le système.</span>
+<span class="sd">    </span>
+<span class="sd">    Cette fonction peut être appelée pour une démonstration rapide</span>
+<span class="sd">    sans arguments en ligne de commande.</span>
+<span class="sd">    </span>
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; from main import demo_rapide</span>
+<span class="sd">        &gt;&gt;&gt; demo_rapide()</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;🎯 DÉMONSTRATION RAPIDE DU SIMULATEUR&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Configuration: 30 tours de 30 secondes&quot;</span><span class="p">)</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">simulateur</span> <span class="o">=</span> <span class="n">Simulateur</span><span class="p">(</span><span class="s2">&quot;data/config_reseau.json&quot;</span><span class="p">)</span>
+        <span class="n">affichage</span> <span class="o">=</span> <span class="n">Affichage</span><span class="p">()</span>
+        
+        <span class="c1"># Simulation courte</span>
+        <span class="n">simulateur</span><span class="o">.</span><span class="n">lancer_simulation</span><span class="p">(</span><span class="n">n_tours</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">delta_t</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">afficher_progression</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        
+        <span class="c1"># Affichage rapide des résultats</span>
+        <span class="n">rapport</span> <span class="o">=</span> <span class="n">simulateur</span><span class="o">.</span><span class="n">analyseur</span><span class="o">.</span><span class="n">generer_rapport_performance</span><span class="p">()</span>
+        <span class="n">affichage</span><span class="o">.</span><span class="n">afficher_rapport_performance</span><span class="p">(</span><span class="n">rapport</span><span class="p">)</span>
+        
+        <span class="c1"># Graphique simple</span>
+        <span class="n">affichage</span><span class="o">.</span><span class="n">generer_graphique_evolution</span><span class="p">(</span><span class="n">simulateur</span><span class="o">.</span><span class="n">historique_stats</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="kc">True</span>
+        
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;❌ Erreur lors de la démonstration: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">False</span></div>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Point d&#39;entrée principal lorsqu&#39;on exécute le script directement.</span>
+<span class="sd">    </span>
+<span class="sd">    Example:</span>
+<span class="sd">        $ python main.py -t 100 -d 30 --export-all --real-time-display</span>
+<span class="sd">        $ python main.py --no-graph --export-dir &quot;mes_exports&quot;</span>
+<span class="sd">        $ python main.py --verbose --tours 50</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="c1"># Si aucun argument n&#39;est fourni, proposer une démonstration rapide</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;🤔 Aucun argument fourni. Voulez-vous lancer une démonstration rapide?&quot;</span><span class="p">)</span>
+<div class="viewcode-block" id="reponse">
+<a class="viewcode-back" href="../../api/simulateur_trafic/main/index.html#simulateur_trafic.main.reponse">[docs]</a>
+        <span class="n">reponse</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;(O)ui ou (N)on? &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span></div>
+
+        <span class="k">if</span> <span class="n">reponse</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;oui&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;yes&#39;</span><span class="p">]:</span>
+            <span class="n">success</span> <span class="o">=</span> <span class="n">demo_rapide</span><span class="p">()</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span> <span class="k">if</span> <span class="n">success</span> <span class="k">else</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Utilisez --help pour voir les options disponibles&quot;</span><span class="p">)</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    
+    <span class="n">exit_code</span> <span class="o">=</span> <span class="n">main</span><span class="p">()</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">exit_code</span><span class="p">)</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2025, Aya Zid.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

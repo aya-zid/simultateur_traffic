@@ -1,0 +1,20 @@
+API Reference
+=============
+
+This page contains auto-generated API reference documentation [#f1]_.
+
+.. toctree::
+   :titlesonly:
+
+   /api/conf/index
+   /api/route/index
+   /api/export/index
+   /api/reseau/index
+   /api/vehicule/index
+   /api/analyseur/index
+   /api/affichage/index
+   /api/simulateur/index
+   /api/test_simulateur/index
+   /api/simulateur_trafic/index
+
+.. [#f1] Created with `sphinx-autoapi <https://github.com/readthedocs/sphinx-autoapi>`_

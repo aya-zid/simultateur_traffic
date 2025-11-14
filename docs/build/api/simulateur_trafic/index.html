@@ -1,0 +1,280 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>simulateur_trafic &mdash; Documentation Simulateur de Trafic Routier Intelligent 1</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=a12a2fe1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/translations.js?v=e6b791cb"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Recherche" href="../../search.html" />
+    <link rel="next" title="simulateur_trafic.main" href="main/index.html" />
+    <link rel="prev" title="test_simulateur" href="../test_simulateur/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Simulateur de Trafic Routier Intelligent
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contenu:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html#presentation">Présentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html#objectifs-du-projet">Objectifs du Projet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html#cas-d-utilisation">Cas d’Utilisation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html#architecture-technique">Architecture Technique</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Utilisation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../usage.html#ligne-de-commande">Ligne de Commande</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../usage.html#options-disponibles">Options Disponibles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage.html#exemples-d-utilisation">Exemples d’Utilisation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage.html#utilisation-en-tant-que-module">Utilisation en tant que Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage.html#configuration-du-reseau">Configuration du Réseau</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage.html#format-des-sorties">Format des Sorties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage.html#visualisations">Visualisations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage.html#exemple-complet">Exemple Complet</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../conf/index.html">conf</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../conf/index.html#attributes">Attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../conf/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.project"><code class="docutils literal notranslate"><span class="pre">project</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.copyright"><code class="docutils literal notranslate"><span class="pre">copyright</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.author"><code class="docutils literal notranslate"><span class="pre">author</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.release"><code class="docutils literal notranslate"><span class="pre">release</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.extensions"><code class="docutils literal notranslate"><span class="pre">extensions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.autoapi_type"><code class="docutils literal notranslate"><span class="pre">autoapi_type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.autoapi_dirs"><code class="docutils literal notranslate"><span class="pre">autoapi_dirs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.autoapi_add_toctree_entry"><code class="docutils literal notranslate"><span class="pre">autoapi_add_toctree_entry</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.autoapi_root"><code class="docutils literal notranslate"><span class="pre">autoapi_root</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.autoapi_keep_files"><code class="docutils literal notranslate"><span class="pre">autoapi_keep_files</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.napoleon_google_docstring"><code class="docutils literal notranslate"><span class="pre">napoleon_google_docstring</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.napoleon_numpy_docstring"><code class="docutils literal notranslate"><span class="pre">napoleon_numpy_docstring</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.napoleon_include_init_with_doc"><code class="docutils literal notranslate"><span class="pre">napoleon_include_init_with_doc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.napoleon_include_private_with_doc"><code class="docutils literal notranslate"><span class="pre">napoleon_include_private_with_doc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.napoleon_include_special_with_doc"><code class="docutils literal notranslate"><span class="pre">napoleon_include_special_with_doc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.napoleon_use_admonition_for_examples"><code class="docutils literal notranslate"><span class="pre">napoleon_use_admonition_for_examples</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.napoleon_use_admonition_for_notes"><code class="docutils literal notranslate"><span class="pre">napoleon_use_admonition_for_notes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.napoleon_use_admonition_for_references"><code class="docutils literal notranslate"><span class="pre">napoleon_use_admonition_for_references</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.napoleon_use_ivar"><code class="docutils literal notranslate"><span class="pre">napoleon_use_ivar</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.napoleon_use_param"><code class="docutils literal notranslate"><span class="pre">napoleon_use_param</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.napoleon_use_rtype"><code class="docutils literal notranslate"><span class="pre">napoleon_use_rtype</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.html_theme"><code class="docutils literal notranslate"><span class="pre">html_theme</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.html_theme_options"><code class="docutils literal notranslate"><span class="pre">html_theme_options</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.html_static_path"><code class="docutils literal notranslate"><span class="pre">html_static_path</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.master_doc"><code class="docutils literal notranslate"><span class="pre">master_doc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.language"><code class="docutils literal notranslate"><span class="pre">language</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.todo_include_todos"><code class="docutils literal notranslate"><span class="pre">todo_include_todos</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.autoapi_options"><code class="docutils literal notranslate"><span class="pre">autoapi_options</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../route/index.html">route</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../route/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../route/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../route/index.html#route.Route"><code class="docutils literal notranslate"><span class="pre">Route</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../export/index.html">export</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../export/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../export/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../export/index.html#export.Export"><code class="docutils literal notranslate"><span class="pre">Export</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../reseau/index.html">reseau</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../reseau/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reseau/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reseau/index.html#reseau.ReseauRoutier"><code class="docutils literal notranslate"><span class="pre">ReseauRoutier</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../vehicule/index.html">vehicule</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../vehicule/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../vehicule/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../vehicule/index.html#vehicule.Vehicule"><code class="docutils literal notranslate"><span class="pre">Vehicule</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../analyseur/index.html">analyseur</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../analyseur/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../analyseur/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../analyseur/index.html#analyseur.Analyseur"><code class="docutils literal notranslate"><span class="pre">Analyseur</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../affichage/index.html">affichage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../affichage/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../affichage/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../affichage/index.html#affichage.Affichage"><code class="docutils literal notranslate"><span class="pre">Affichage</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../simulateur/index.html">simulateur</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../simulateur/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../simulateur/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../simulateur/index.html#simulateur.Simulateur"><code class="docutils literal notranslate"><span class="pre">Simulateur</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../test_simulateur/index.html">test_simulateur</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../test_simulateur/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../test_simulateur/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../test_simulateur/index.html#test_simulateur.TestVehicule"><code class="docutils literal notranslate"><span class="pre">TestVehicule</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../test_simulateur/index.html#test_simulateur.TestRoute"><code class="docutils literal notranslate"><span class="pre">TestRoute</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../test_simulateur/index.html#test_simulateur.TestReseauRoutier"><code class="docutils literal notranslate"><span class="pre">TestReseauRoutier</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">simulateur_trafic</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="main/index.html">simulateur_trafic.main</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples.html">Exemples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#exemple-basique">Exemple Basique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#exemple-avec-configuration-personnalisee">Exemple avec Configuration Personnalisée</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#exemple-avec-analyse-avancee">Exemple avec Analyse Avancée</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#exemple-avec-export-des-donnees">Exemple avec Export des Données</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#exemple-avec-visualisation">Exemple avec Visualisation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#scripts-d-exemple">Scripts d’Exemple</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Simulateur de Trafic Routier Intelligent</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">API Reference</a></li>
+      <li class="breadcrumb-item active">simulateur_trafic</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/api/simulateur_trafic/index.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-simulateur_trafic">
+<span id="simulateur-trafic"></span><h1>simulateur_trafic<a class="headerlink" href="#module-simulateur_trafic" title="Lien vers cette rubrique"></a></h1>
+<p>Simulateur de Trafic Routier Intelligent</p>
+<p>Un package Python pour modéliser et simuler un réseau routier intelligent.
+Ce package permet de créer des routes, intersections, véhicules et de simuler
+la circulation avec analyse des performances.</p>
+<p>Sous-modules:
+- models: Classes de base (Véhicule, Route, Réseau)
+- core: Moteur de simulation et analyse
+- io_utils: Affichage et export des données
+- tests: Tests unitaires
+- data: Fichiers de configuration</p>
+<dl>
+<dt>Exemple d’utilisation:</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">simulateur_trafic.core.simulateur</span><span class="w"> </span><span class="kn">import</span> <span class="n">Simulateur</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">simu</span> <span class="o">=</span> <span class="n">Simulateur</span><span class="p">(</span><span class="s2">&quot;data/config_reseau.json&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">simu</span><span class="o">.</span><span class="n">lancer_simulation</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<p>Auteur: Aya Zid
+Version: 1.0.0
+Licence: MIT</p>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Lien vers cette rubrique"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="main/index.html">simulateur_trafic.main</a></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="../test_simulateur/index.html" class="btn btn-neutral float-left" title="test_simulateur" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="main/index.html" class="btn btn-neutral float-right" title="simulateur_trafic.main" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2025, Aya Zid.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

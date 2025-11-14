@@ -1,0 +1,196 @@
+reseau
+======
+
+.. py:module:: reseau
+
+.. autoapi-nested-parse::
+
+   Module ReseauRoutier - Définition de la classe ReseauRoutier
+
+   Ce module définit la classe ReseauRoutier qui représente l'ensemble
+   du réseau routier. Elle gère toutes les routes, les intersections
+   et la logique globale de simulation.
+
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   reseau.ReseauRoutier
+
+
+Module Contents
+---------------
+
+.. py:class:: ReseauRoutier
+
+   Représente l'ensemble du réseau routier.
+
+   Le réseau routier contient toutes les routes et gère les connections
+   entre elles. Il orchestre la simulation globale du trafic.
+
+   :ivar routes: Dictionnaire des routes {nom_route: objet_route}
+   :vartype routes: dict
+   :ivar intersections: Dictionnaire des connections entre routes
+   :vartype intersections: dict
+   :ivar historique_trafic: Historique des états du trafic
+
+   :vartype historique_trafic: list
+
+   .. admonition:: Exemple
+
+      >>> reseau = ReseauRoutier()
+      >>> route1 = Route("Route_A", 1000, 90)
+      >>> reseau.ajouter_route(route1)
+      >>> reseau.ajouter_intersection("Route_A", "Route_B")
+
+
+   .. py:attribute:: routes
+
+
+   .. py:attribute:: intersections
+
+
+   .. py:attribute:: historique_trafic
+      :value: []
+
+
+
+   .. py:method:: ajouter_route(route)
+
+      Ajoute une route au réseau.
+
+      :param route: Route à ajouter au réseau
+      :type route: Route
+
+      :raises ValueError: Si une route avec le même nom existe déjà
+
+      .. admonition:: Exemple
+
+         >>> reseau = ReseauRoutier()
+         >>> route = Route("Autoroute_A1", 5000, 130)
+         >>> reseau.ajouter_route(route)
+
+
+
+   .. py:method:: ajouter_intersection(route_source, route_destination)
+
+      Ajoute une connection entre deux routes.
+
+      Crée une intersection permettant aux véhicules de passer
+      de la route source à la route destination.
+
+      :param route_source: Nom de la route de départ
+      :type route_source: str
+      :param route_destination: Nom de la route d'arrivée
+      :type route_destination: str
+
+      :raises ValueError: Si une des routes n'existe pas
+
+      .. admonition:: Exemple
+
+         >>> reseau.ajouter_intersection("Route_A", "Route_B")
+
+
+
+   .. py:method:: get_route(nom_route)
+
+      Récupère une route par son nom.
+
+      :param nom_route: Nom de la route à récupérer
+      :type nom_route: str
+
+      :returns: La route correspondante ou None si non trouvée
+      :rtype: Route
+
+      .. admonition:: Exemple
+
+         >>> route = reseau.get_route("Autoroute_A1")
+         >>> if route:
+         ...     print(f"Route trouvée: {route.nom}")
+
+
+
+   .. py:method:: get_routes_destination(route_source)
+
+      Récupère les routes accessibles depuis une route source.
+
+      :param route_source: Nom de la route de départ
+      :type route_source: str
+
+      :returns: Liste des noms des routes accessibles
+      :rtype: list
+
+      .. admonition:: Exemple
+
+         >>> destinations = reseau.get_routes_destination("Route_A")
+         >>> print(destinations)
+         ['Route_B', 'Route_C']
+
+
+
+   .. py:method:: get_nombre_total_vehicules()
+
+      Calcule le nombre total de véhicules dans tout le réseau.
+
+      :returns: Nombre total de véhicules
+      :rtype: int
+
+      .. admonition:: Exemple
+
+         >>> total = reseau.get_nombre_total_vehicules()
+         >>> print(f"Véhicules en circulation: {total}")
+
+
+
+   .. py:method:: mettre_a_jour_reseau()
+
+      Met à jour l'état complet du réseau.
+
+      Cette méthode met à jour toutes les routes et gère les véhicules
+      qui changent de route aux intersections.
+
+      :returns: Statistiques de la mise à jour
+      :rtype: dict
+
+      .. admonition:: Exemple
+
+         >>> stats = reseau.mettre_a_jour_reseau()
+         >>> print(f"Véhicules ayant changé de route: {stats['changements_route']}")
+
+
+
+   .. py:method:: get_densite_trafic_moyenne()
+
+      Calcule la densité de trafic moyenne sur toutes les routes.
+
+      :returns: Densité moyenne (véhicules/km)
+      :rtype: float
+
+      .. admonition:: Exemple
+
+         >>> densite_moyenne = reseau.get_densite_trafic_moyenne()
+         >>> print(f"Densité moyenne: {densite_moyenne:.2f} véhicules/km")
+
+
+
+   .. py:method:: __str__()
+
+      Représentation textuelle du réseau routier.
+
+      :returns: Description du réseau
+      :rtype: str
+
+
+
+   .. py:method:: __repr__()
+
+      Représentation technique du réseau routier.
+
+      :returns: Représentation pouvant être utilisée pour recréer l'objet
+      :rtype: str
+
+
+

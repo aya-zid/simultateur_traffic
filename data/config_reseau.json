@@ -1,0 +1,112 @@
+{
+  "description": "Réseau routier de test pour la simulation de trafic",
+  "auteur": "Simulateur Trafic Intelligent",
+  "version": "1.0",
+  "routes": [
+    {
+      "nom": "Autoroute_A1",
+      "longueur": 10000,
+      "limite_vitesse": 130
+    },
+    {
+      "nom": "Autoroute_A2",
+      "longueur": 8000,
+      "limite_vitesse": 110
+    },
+    {
+      "nom": "Route_Nationale_1",
+      "longueur": 5000,
+      "limite_vitesse": 90
+    },
+    {
+      "nom": "Route_Departementale_10",
+      "longueur": 3000,
+      "limite_vitesse": 70
+    },
+    {
+      "nom": "Boulevard_Centrale",
+      "longueur": 2000,
+      "limite_vitesse": 50
+    }
+  ],
+  "intersections": [
+    {
+      "source": "Autoroute_A1",
+      "destinations": ["Autoroute_A2", "Route_Nationale_1"]
+    },
+    {
+      "source": "Autoroute_A2",
+      "destinations": ["Route_Departementale_10", "Boulevard_Centrale"]
+    },
+    {
+      "source": "Route_Nationale_1",
+      "destinations": ["Route_Departementale_10"]
+    },
+    {
+      "source": "Route_Departementale_10",
+      "destinations": ["Boulevard_Centrale", "Autoroute_A1"]
+    }
+  ],
+  "vehicules": [
+    {
+      "id": 1,
+      "route": "Autoroute_A1",
+      "position": 0,
+      "vitesse": 110
+    },
+    {
+      "id": 2,
+      "route": "Autoroute_A1",
+      "position": 500,
+      "vitesse": 120
+    },
+    {
+      "id": 3,
+      "route": "Autoroute_A1",
+      "position": 1500,
+      "vitesse": 105
+    },
+    {
+      "id": 4,
+      "route": "Autoroute_A2",
+      "position": 0,
+      "vitesse": 100
+    },
+    {
+      "id": 5,
+      "route": "Autoroute_A2",
+      "position": 800,
+      "vitesse": 95
+    },
+    {
+      "id": 6,
+      "route": "Route_Nationale_1",
+      "position": 0,
+      "vitesse": 80
+    },
+    {
+      "id": 7,
+      "route": "Route_Nationale_1",
+      "position": 1200,
+      "vitesse": 85
+    },
+    {
+      "id": 8,
+      "route": "Route_Departementale_10",
+      "position": 0,
+      "vitesse": 65
+    },
+    {
+      "id": 9,
+      "route": "Boulevard_Centrale",
+      "position": 0,
+      "vitesse": 45
+    },
+    {
+      "id": 10,
+      "route": "Boulevard_Centrale",
+      "position": 500,
+      "vitesse": 40
+    }
+  ]
+}

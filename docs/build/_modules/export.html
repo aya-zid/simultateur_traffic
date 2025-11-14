@@ -1,0 +1,601 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>export &mdash; Documentation Simulateur de Trafic Routier Intelligent 1</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=a12a2fe1"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/translations.js?v=e6b791cb"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Simulateur de Trafic Routier Intelligent
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contenu:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html#presentation">Présentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html#objectifs-du-projet">Objectifs du Projet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html#cas-d-utilisation">Cas d’Utilisation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html#architecture-technique">Architecture Technique</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Utilisation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../usage.html#ligne-de-commande">Ligne de Commande</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../usage.html#options-disponibles">Options Disponibles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage.html#exemples-d-utilisation">Exemples d’Utilisation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../usage.html#utilisation-en-tant-que-module">Utilisation en tant que Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage.html#configuration-du-reseau">Configuration du Réseau</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage.html#format-des-sorties">Format des Sorties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage.html#visualisations">Visualisations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage.html#exemple-complet">Exemple Complet</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../api/conf/index.html">conf</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/conf/index.html#attributes">Attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/conf/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.project"><code class="docutils literal notranslate"><span class="pre">project</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.copyright"><code class="docutils literal notranslate"><span class="pre">copyright</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.author"><code class="docutils literal notranslate"><span class="pre">author</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.release"><code class="docutils literal notranslate"><span class="pre">release</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.extensions"><code class="docutils literal notranslate"><span class="pre">extensions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.autoapi_type"><code class="docutils literal notranslate"><span class="pre">autoapi_type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.autoapi_dirs"><code class="docutils literal notranslate"><span class="pre">autoapi_dirs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.autoapi_add_toctree_entry"><code class="docutils literal notranslate"><span class="pre">autoapi_add_toctree_entry</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.autoapi_root"><code class="docutils literal notranslate"><span class="pre">autoapi_root</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.autoapi_keep_files"><code class="docutils literal notranslate"><span class="pre">autoapi_keep_files</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.napoleon_google_docstring"><code class="docutils literal notranslate"><span class="pre">napoleon_google_docstring</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.napoleon_numpy_docstring"><code class="docutils literal notranslate"><span class="pre">napoleon_numpy_docstring</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.napoleon_include_init_with_doc"><code class="docutils literal notranslate"><span class="pre">napoleon_include_init_with_doc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.napoleon_include_private_with_doc"><code class="docutils literal notranslate"><span class="pre">napoleon_include_private_with_doc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.napoleon_include_special_with_doc"><code class="docutils literal notranslate"><span class="pre">napoleon_include_special_with_doc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.napoleon_use_admonition_for_examples"><code class="docutils literal notranslate"><span class="pre">napoleon_use_admonition_for_examples</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.napoleon_use_admonition_for_notes"><code class="docutils literal notranslate"><span class="pre">napoleon_use_admonition_for_notes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.napoleon_use_admonition_for_references"><code class="docutils literal notranslate"><span class="pre">napoleon_use_admonition_for_references</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.napoleon_use_ivar"><code class="docutils literal notranslate"><span class="pre">napoleon_use_ivar</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.napoleon_use_param"><code class="docutils literal notranslate"><span class="pre">napoleon_use_param</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.napoleon_use_rtype"><code class="docutils literal notranslate"><span class="pre">napoleon_use_rtype</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.html_theme"><code class="docutils literal notranslate"><span class="pre">html_theme</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.html_theme_options"><code class="docutils literal notranslate"><span class="pre">html_theme_options</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.html_static_path"><code class="docutils literal notranslate"><span class="pre">html_static_path</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.master_doc"><code class="docutils literal notranslate"><span class="pre">master_doc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.language"><code class="docutils literal notranslate"><span class="pre">language</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.todo_include_todos"><code class="docutils literal notranslate"><span class="pre">todo_include_todos</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.autoapi_options"><code class="docutils literal notranslate"><span class="pre">autoapi_options</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/route/index.html">route</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/route/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/route/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/route/index.html#route.Route"><code class="docutils literal notranslate"><span class="pre">Route</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/export/index.html">export</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/export/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/export/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/export/index.html#export.Export"><code class="docutils literal notranslate"><span class="pre">Export</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/reseau/index.html">reseau</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/reseau/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/reseau/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/reseau/index.html#reseau.ReseauRoutier"><code class="docutils literal notranslate"><span class="pre">ReseauRoutier</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/vehicule/index.html">vehicule</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/vehicule/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/vehicule/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/vehicule/index.html#vehicule.Vehicule"><code class="docutils literal notranslate"><span class="pre">Vehicule</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/analyseur/index.html">analyseur</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/analyseur/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/analyseur/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/analyseur/index.html#analyseur.Analyseur"><code class="docutils literal notranslate"><span class="pre">Analyseur</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/affichage/index.html">affichage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/affichage/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/affichage/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/affichage/index.html#affichage.Affichage"><code class="docutils literal notranslate"><span class="pre">Affichage</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/simulateur/index.html">simulateur</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/simulateur/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/simulateur/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/simulateur/index.html#simulateur.Simulateur"><code class="docutils literal notranslate"><span class="pre">Simulateur</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/test_simulateur/index.html">test_simulateur</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/test_simulateur/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/test_simulateur/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/test_simulateur/index.html#test_simulateur.TestVehicule"><code class="docutils literal notranslate"><span class="pre">TestVehicule</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/test_simulateur/index.html#test_simulateur.TestRoute"><code class="docutils literal notranslate"><span class="pre">TestRoute</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/test_simulateur/index.html#test_simulateur.TestReseauRoutier"><code class="docutils literal notranslate"><span class="pre">TestReseauRoutier</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/simulateur_trafic/index.html">simulateur_trafic</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/simulateur_trafic/index.html#submodules">Submodules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/simulateur_trafic/main/index.html">simulateur_trafic.main</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">Exemples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#exemple-basique">Exemple Basique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#exemple-avec-configuration-personnalisee">Exemple avec Configuration Personnalisée</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#exemple-avec-analyse-avancee">Exemple avec Analyse Avancée</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#exemple-avec-export-des-donnees">Exemple avec Export des Données</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#exemple-avec-visualisation">Exemple avec Visualisation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#scripts-d-exemple">Scripts d’Exemple</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Simulateur de Trafic Routier Intelligent</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Code du module</a></li>
+      <li class="breadcrumb-item active">export</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Code source de export</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Module Export - Export des données de simulation</span>
+
+<span class="sd">Ce module fournit des fonctions pour exporter les résultats de simulation</span>
+<span class="sd">dans différents formats (CSV, JSON, Excel) et générer des rapports.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">csv</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="c1"># Ajouter le chemin pour importer les modules</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">),</span> <span class="s1">&#39;..&#39;</span><span class="p">))</span>
+
+<div class="viewcode-block" id="Export">
+<a class="viewcode-back" href="../api/export/index.html#export.Export">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Export</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Classe pour l&#39;export des données de simulation.</span>
+<span class="sd">    </span>
+<span class="sd">    Cette classe permet d&#39;exporter les résultats de simulation</span>
+<span class="sd">    dans différents formats pour analyse ultérieure.</span>
+<span class="sd">    </span>
+<span class="sd">    Attributes:</span>
+<span class="sd">        format_date (str): Format pour les horodatages</span>
+<span class="sd">        repertoire_sortie (str): Répertoire par défaut pour les exports</span>
+<span class="sd">    </span>
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; export = Export()</span>
+<span class="sd">        &gt;&gt;&gt; export.exporter_csv(historique_stats, &quot;resultats_simulation.csv&quot;)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">repertoire_sortie</span><span class="o">=</span><span class="s2">&quot;exports&quot;</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initialise l&#39;export avec un répertoire de sortie.</span>
+<span class="sd">        </span>
+<span class="sd">        Args:</span>
+<span class="sd">            repertoire_sortie (str): Répertoire pour les fichiers d&#39;export</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+<div class="viewcode-block" id="Export.repertoire_sortie">
+<a class="viewcode-back" href="../api/export/index.html#export.Export.repertoire_sortie">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">repertoire_sortie</span> <span class="o">=</span> <span class="n">repertoire_sortie</span></div>
+
+<div class="viewcode-block" id="Export.format_date">
+<a class="viewcode-back" href="../api/export/index.html#export.Export.format_date">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">format_date</span> <span class="o">=</span> <span class="s2">&quot;%Y%m</span><span class="si">%d</span><span class="s2">_%H%M%S&quot;</span></div>
+
+        
+        <span class="c1"># Créer le répertoire s&#39;il n&#39;existe pas</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">repertoire_sortie</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    
+<div class="viewcode-block" id="Export.exporter_json">
+<a class="viewcode-back" href="../api/export/index.html#export.Export.exporter_json">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">exporter_json</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">nom_fichier</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Exporte les données au format JSON.</span>
+<span class="sd">        </span>
+<span class="sd">        Args:</span>
+<span class="sd">            data (dict): Données à exporter</span>
+<span class="sd">            nom_fichier (str, optional): Nom du fichier de sortie</span>
+<span class="sd">        </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            str: Chemin du fichier créé</span>
+<span class="sd">        </span>
+<span class="sd">        Example:</span>
+<span class="sd">            &gt;&gt;&gt; chemin = export.exporter_json(statistiques, &quot;stats.json&quot;)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">nom_fichier</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">timestamp</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">format_date</span><span class="p">)</span>
+            <span class="n">nom_fichier</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;simulation_</span><span class="si">{</span><span class="n">timestamp</span><span class="si">}</span><span class="s2">.json&quot;</span>
+        
+        <span class="n">chemin_complet</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">repertoire_sortie</span><span class="p">,</span> <span class="n">nom_fichier</span><span class="p">)</span>
+        
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">chemin_complet</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">ensure_ascii</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+            
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ Données JSON exportées: </span><span class="si">{</span><span class="n">chemin_complet</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">chemin_complet</span>
+            
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;❌ Erreur lors de l&#39;export JSON: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">None</span></div>
+
+    
+<div class="viewcode-block" id="Export.exporter_csv">
+<a class="viewcode-back" href="../api/export/index.html#export.Export.exporter_csv">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">exporter_csv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">historique_stats</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">],</span> <span class="n">nom_fichier</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Exporte l&#39;historique des statistiques au format CSV.</span>
+<span class="sd">        </span>
+<span class="sd">        Args:</span>
+<span class="sd">            historique_stats (list): Historique des statistiques</span>
+<span class="sd">            nom_fichier (str, optional): Nom du fichier de sortie</span>
+<span class="sd">        </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            str: Chemin du fichier créé</span>
+<span class="sd">        </span>
+<span class="sd">        Example:</span>
+<span class="sd">            &gt;&gt;&gt; chemin = export.exporter_csv(historique_stats, &quot;resultats.csv&quot;)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">historique_stats</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;❌ Aucune donnée à exporter&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        
+        <span class="k">if</span> <span class="n">nom_fichier</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">timestamp</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">format_date</span><span class="p">)</span>
+            <span class="n">nom_fichier</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;statistiques_</span><span class="si">{</span><span class="n">timestamp</span><span class="si">}</span><span class="s2">.csv&quot;</span>
+        
+        <span class="n">chemin_complet</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">repertoire_sortie</span><span class="p">,</span> <span class="n">nom_fichier</span><span class="p">)</span>
+        
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># Préparer les données pour CSV</span>
+            <span class="n">lignes</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">stats</span> <span class="ow">in</span> <span class="n">historique_stats</span><span class="p">:</span>
+                <span class="n">ligne</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="s1">&#39;tour&#39;</span><span class="p">:</span> <span class="n">stats</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;tour&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+                    <span class="s1">&#39;temps_ecoule&#39;</span><span class="p">:</span> <span class="n">stats</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;temps_ecoule&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+                    <span class="s1">&#39;vitesse_moyenne&#39;</span><span class="p">:</span> <span class="n">stats</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;vitesse_moyenne&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+                    <span class="s1">&#39;densite_moyenne&#39;</span><span class="p">:</span> <span class="n">stats</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;densite_moyenne&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+                    <span class="s1">&#39;taux_congestion&#39;</span><span class="p">:</span> <span class="n">stats</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;taux_congestion&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+                    <span class="s1">&#39;total_vehicules&#39;</span><span class="p">:</span> <span class="n">stats</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;total_vehicules&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+                    <span class="s1">&#39;changements_route&#39;</span><span class="p">:</span> <span class="n">stats</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;changements_route&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+                    <span class="s1">&#39;vehicules_sortis&#39;</span><span class="p">:</span> <span class="n">stats</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;vehicules_sortis&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="p">}</span>
+                
+                <span class="c1"># Ajouter les statistiques par route</span>
+                <span class="k">if</span> <span class="s1">&#39;routes&#39;</span> <span class="ow">in</span> <span class="n">stats</span><span class="p">:</span>
+                    <span class="k">for</span> <span class="n">nom_route</span><span class="p">,</span> <span class="n">stats_route</span> <span class="ow">in</span> <span class="n">stats</span><span class="p">[</span><span class="s1">&#39;routes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                        <span class="n">ligne</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">nom_route</span><span class="si">}</span><span class="s1">_vehicules&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">stats_route</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;nb_vehicules&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                        <span class="n">ligne</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">nom_route</span><span class="si">}</span><span class="s1">_vitesse&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">stats_route</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;vitesse_moyenne&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                        <span class="n">ligne</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">nom_route</span><span class="si">}</span><span class="s1">_densite&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">stats_route</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;densite&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                
+                <span class="n">lignes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ligne</span><span class="p">)</span>
+            
+            <span class="c1"># Écrire le CSV</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">chemin_complet</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">lignes</span><span class="p">:</span>
+                    <span class="n">fieldnames</span> <span class="o">=</span> <span class="n">lignes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+                    <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictWriter</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">fieldnames</span><span class="o">=</span><span class="n">fieldnames</span><span class="p">)</span>
+                    <span class="n">writer</span><span class="o">.</span><span class="n">writeheader</span><span class="p">()</span>
+                    <span class="n">writer</span><span class="o">.</span><span class="n">writerows</span><span class="p">(</span><span class="n">lignes</span><span class="p">)</span>
+            
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ Données CSV exportées: </span><span class="si">{</span><span class="n">chemin_complet</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">lignes</span><span class="p">)</span><span class="si">}</span><span class="s2"> lignes)&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">chemin_complet</span>
+            
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;❌ Erreur lors de l&#39;export CSV: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">None</span></div>
+
+    
+<div class="viewcode-block" id="Export.exporter_excel">
+<a class="viewcode-back" href="../api/export/index.html#export.Export.exporter_excel">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">exporter_excel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">historique_stats</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">],</span> <span class="n">nom_fichier</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Exporte les données au format Excel avec plusieurs onglets.</span>
+<span class="sd">        </span>
+<span class="sd">        Args:</span>
+<span class="sd">            historique_stats (list): Historique des statistiques</span>
+<span class="sd">            nom_fichier (str, optional): Nom du fichier de sortie</span>
+<span class="sd">        </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            str: Chemin du fichier créé</span>
+<span class="sd">        </span>
+<span class="sd">        Example:</span>
+<span class="sd">            &gt;&gt;&gt; chemin = export.exporter_excel(historique_stats, &quot;rapport.xlsx&quot;)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="kn">import</span><span class="w"> </span><span class="nn">openpyxl</span>
+        <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;❌ openpyxl n&#39;est pas installé. Installez-le avec: pip install openpyxl&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        
+        <span class="k">if</span> <span class="n">nom_fichier</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">timestamp</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">format_date</span><span class="p">)</span>
+            <span class="n">nom_fichier</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;rapport_complet_</span><span class="si">{</span><span class="n">timestamp</span><span class="si">}</span><span class="s2">.xlsx&quot;</span>
+        
+        <span class="n">chemin_complet</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">repertoire_sortie</span><span class="p">,</span> <span class="n">nom_fichier</span><span class="p">)</span>
+        
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">with</span> <span class="n">pd</span><span class="o">.</span><span class="n">ExcelWriter</span><span class="p">(</span><span class="n">chemin_complet</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s1">&#39;openpyxl&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">writer</span><span class="p">:</span>
+                
+                <span class="c1"># Onglet 1: Statistiques temporelles</span>
+                <span class="k">if</span> <span class="n">historique_stats</span><span class="p">:</span>
+                    <span class="n">df_stats</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">historique_stats</span><span class="p">)</span>
+                    <span class="n">df_stats</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;Statistiques_Temporelles&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+                
+                <span class="c1"># Onglet 2: Résumé global</span>
+                <span class="k">if</span> <span class="n">historique_stats</span><span class="p">:</span>
+                    <span class="n">resume_data</span> <span class="o">=</span> <span class="p">{</span>
+                        <span class="s1">&#39;Métrique&#39;</span><span class="p">:</span> <span class="p">[</span>
+                            <span class="s1">&#39;Tours de simulation&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;Durée totale (s)&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;Vitesse moyenne globale (km/h)&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;Densité moyenne globale (véh/km)&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;Congestion moyenne (%)&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;Véhicules maximum&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;Changements de route totaux&#39;</span>
+                        <span class="p">],</span>
+                        <span class="s1">&#39;Valeur&#39;</span><span class="p">:</span> <span class="p">[</span>
+                            <span class="nb">len</span><span class="p">(</span><span class="n">historique_stats</span><span class="p">),</span>
+                            <span class="n">historique_stats</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;temps_ecoule&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="k">if</span> <span class="n">historique_stats</span> <span class="k">else</span> <span class="mi">0</span><span class="p">,</span>
+                            <span class="nb">sum</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;vitesse_moyenne&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">historique_stats</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">historique_stats</span><span class="p">)</span> <span class="k">if</span> <span class="n">historique_stats</span> <span class="k">else</span> <span class="mi">0</span><span class="p">,</span>
+                            <span class="nb">sum</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;densite_moyenne&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">historique_stats</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">historique_stats</span><span class="p">)</span> <span class="k">if</span> <span class="n">historique_stats</span> <span class="k">else</span> <span class="mi">0</span><span class="p">,</span>
+                            <span class="nb">sum</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;taux_congestion&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">historique_stats</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">historique_stats</span><span class="p">)</span> <span class="k">if</span> <span class="n">historique_stats</span> <span class="k">else</span> <span class="mi">0</span><span class="p">,</span>
+                            <span class="nb">max</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;total_vehicules&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">historique_stats</span><span class="p">)</span> <span class="k">if</span> <span class="n">historique_stats</span> <span class="k">else</span> <span class="mi">0</span><span class="p">,</span>
+                            <span class="nb">sum</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;changements_route&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">historique_stats</span><span class="p">)</span> <span class="k">if</span> <span class="n">historique_stats</span> <span class="k">else</span> <span class="mi">0</span>
+                        <span class="p">]</span>
+                    <span class="p">}</span>
+                    <span class="n">df_resume</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">resume_data</span><span class="p">)</span>
+                    <span class="n">df_resume</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;Resume_Global&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+                
+                <span class="c1"># Onglet 3: Statistiques par route (dernier tour)</span>
+                <span class="k">if</span> <span class="n">historique_stats</span> <span class="ow">and</span> <span class="s1">&#39;routes&#39;</span> <span class="ow">in</span> <span class="n">historique_stats</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+                    <span class="n">routes_data</span> <span class="o">=</span> <span class="p">[]</span>
+                    <span class="k">for</span> <span class="n">nom_route</span><span class="p">,</span> <span class="n">stats_route</span> <span class="ow">in</span> <span class="n">historique_stats</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;routes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                        <span class="n">routes_data</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                            <span class="s1">&#39;Route&#39;</span><span class="p">:</span> <span class="n">nom_route</span><span class="p">,</span>
+                            <span class="s1">&#39;Véhicules&#39;</span><span class="p">:</span> <span class="n">stats_route</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;nb_vehicules&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+                            <span class="s1">&#39;Vitesse moyenne (km/h)&#39;</span><span class="p">:</span> <span class="n">stats_route</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;vitesse_moyenne&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+                            <span class="s1">&#39;Densité (véh/km)&#39;</span><span class="p">:</span> <span class="n">stats_route</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;densite&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+                            <span class="s1">&#39;Utilisation&#39;</span><span class="p">:</span> <span class="n">stats_route</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;utilisation&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                        <span class="p">})</span>
+                    <span class="n">df_routes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">routes_data</span><span class="p">)</span>
+                    <span class="n">df_routes</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;Routes_Finales&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+            
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ Rapport Excel exporté: </span><span class="si">{</span><span class="n">chemin_complet</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">chemin_complet</span>
+            
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;❌ Erreur lors de l&#39;export Excel: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">None</span></div>
+
+    
+<div class="viewcode-block" id="Export.generer_rapport_complet">
+<a class="viewcode-back" href="../api/export/index.html#export.Export.generer_rapport_complet">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">generer_rapport_complet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">simulateur</span><span class="p">,</span> <span class="n">nom_fichier</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Génère un rapport complet avec toutes les données de simulation.</span>
+<span class="sd">        </span>
+<span class="sd">        Args:</span>
+<span class="sd">            simulateur: Instance du simulateur</span>
+<span class="sd">            nom_fichier (str, optional): Nom du fichier de sortie</span>
+<span class="sd">        </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            str: Chemin du fichier créé</span>
+<span class="sd">        </span>
+<span class="sd">        Example:</span>
+<span class="sd">            &gt;&gt;&gt; chemin = export.generer_rapport_complet(simulateur)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">nom_fichier</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">timestamp</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">format_date</span><span class="p">)</span>
+            <span class="n">nom_fichier</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;rapport_complet_</span><span class="si">{</span><span class="n">timestamp</span><span class="si">}</span><span class="s2">.json&quot;</span>
+        
+        <span class="n">chemin_complet</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">repertoire_sortie</span><span class="p">,</span> <span class="n">nom_fichier</span><span class="p">)</span>
+        
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># Collecter toutes les données</span>
+            <span class="n">rapport</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s1">&#39;metadata&#39;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s1">&#39;date_generation&#39;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(),</span>
+                    <span class="s1">&#39;duree_simulation&#39;</span><span class="p">:</span> <span class="n">simulateur</span><span class="o">.</span><span class="n">temps_ecoule</span><span class="p">,</span>
+                    <span class="s1">&#39;nombre_tours&#39;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">simulateur</span><span class="o">.</span><span class="n">historique_stats</span><span class="p">),</span>
+                    <span class="s1">&#39;nombre_routes&#39;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">simulateur</span><span class="o">.</span><span class="n">reseau</span><span class="o">.</span><span class="n">routes</span><span class="p">),</span>
+                    <span class="s1">&#39;vehicules_maximum&#39;</span><span class="p">:</span> <span class="nb">max</span><span class="p">(</span>
+                        <span class="p">[</span><span class="n">stats</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;total_vehicules&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="k">for</span> <span class="n">stats</span> <span class="ow">in</span> <span class="n">simulateur</span><span class="o">.</span><span class="n">historique_stats</span><span class="p">]</span>
+                    <span class="p">)</span> <span class="k">if</span> <span class="n">simulateur</span><span class="o">.</span><span class="n">historique_stats</span> <span class="k">else</span> <span class="mi">0</span>
+                <span class="p">},</span>
+                <span class="s1">&#39;reseau&#39;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s1">&#39;routes&#39;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="n">nom</span><span class="p">:</span> <span class="p">{</span>
+                            <span class="s1">&#39;longueur&#39;</span><span class="p">:</span> <span class="n">route</span><span class="o">.</span><span class="n">longueur</span><span class="p">,</span>
+                            <span class="s1">&#39;limite_vitesse&#39;</span><span class="p">:</span> <span class="n">route</span><span class="o">.</span><span class="n">limite_vitesse</span><span class="p">,</span>
+                            <span class="s1">&#39;vehicules_actuels&#39;</span><span class="p">:</span> <span class="n">route</span><span class="o">.</span><span class="n">get_nombre_vehicules</span><span class="p">()</span>
+                        <span class="p">}</span> <span class="k">for</span> <span class="n">nom</span><span class="p">,</span> <span class="n">route</span> <span class="ow">in</span> <span class="n">simulateur</span><span class="o">.</span><span class="n">reseau</span><span class="o">.</span><span class="n">routes</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+                    <span class="p">},</span>
+                    <span class="s1">&#39;intersections&#39;</span><span class="p">:</span> <span class="n">simulateur</span><span class="o">.</span><span class="n">reseau</span><span class="o">.</span><span class="n">intersections</span>
+                <span class="p">},</span>
+                <span class="s1">&#39;statistiques_globales&#39;</span><span class="p">:</span> <span class="n">simulateur</span><span class="o">.</span><span class="n">analyseur</span><span class="o">.</span><span class="n">calculer_statistiques_globales</span><span class="p">(),</span>
+                <span class="s1">&#39;historique_detaille&#39;</span><span class="p">:</span> <span class="n">simulateur</span><span class="o">.</span><span class="n">historique_stats</span><span class="p">,</span>
+                <span class="s1">&#39;zones_congestion&#39;</span><span class="p">:</span> <span class="n">simulateur</span><span class="o">.</span><span class="n">analyseur</span><span class="o">.</span><span class="n">identifier_zones_congestion</span><span class="p">(),</span>
+                <span class="s1">&#39;performance&#39;</span><span class="p">:</span> <span class="n">simulateur</span><span class="o">.</span><span class="n">analyseur</span><span class="o">.</span><span class="n">generer_rapport_performance</span><span class="p">()</span>
+            <span class="p">}</span>
+            
+            <span class="c1"># Exporter le rapport</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">chemin_complet</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">rapport</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">ensure_ascii</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+            
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ Rapport complet exporté: </span><span class="si">{</span><span class="n">chemin_complet</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">chemin_complet</span>
+            
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;❌ Erreur lors de la génération du rapport: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">None</span></div>
+
+    
+<div class="viewcode-block" id="Export.exporter_pour_visualisation">
+<a class="viewcode-back" href="../api/export/index.html#export.Export.exporter_pour_visualisation">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">exporter_pour_visualisation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">historique_stats</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">],</span> <span class="n">prefixe</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;visu&quot;</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Exporte les données dans un format optimisé pour la visualisation.</span>
+<span class="sd">        </span>
+<span class="sd">        Args:</span>
+<span class="sd">            historique_stats (list): Historique des statistiques</span>
+<span class="sd">            prefixe (str): Préfixe pour les fichiers</span>
+<span class="sd">        </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            dict: Chemins des fichiers créés</span>
+<span class="sd">        </span>
+<span class="sd">        Example:</span>
+<span class="sd">            &gt;&gt;&gt; fichiers = export.exporter_pour_visualisation(historique_stats)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">timestamp</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">format_date</span><span class="p">)</span>
+        <span class="n">fichiers_crees</span> <span class="o">=</span> <span class="p">{}</span>
+        
+        <span class="c1"># Export JSON pour visualisations web</span>
+        <span class="n">fichiers_crees</span><span class="p">[</span><span class="s1">&#39;json&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">exporter_json</span><span class="p">(</span>
+            <span class="n">historique_stats</span><span class="p">,</span> 
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">prefixe</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">timestamp</span><span class="si">}</span><span class="s2">.json&quot;</span>
+        <span class="p">)</span>
+        
+        <span class="c1"># Export CSV pour analyse</span>
+        <span class="n">fichiers_crees</span><span class="p">[</span><span class="s1">&#39;csv&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">exporter_csv</span><span class="p">(</span>
+            <span class="n">historique_stats</span><span class="p">,</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">prefixe</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">timestamp</span><span class="si">}</span><span class="s2">.csv&quot;</span>
+        <span class="p">)</span>
+        
+        <span class="c1"># Export des métriques clés séparément</span>
+        <span class="k">if</span> <span class="n">historique_stats</span><span class="p">:</span>
+            <span class="n">metriques_cles</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s1">&#39;temps&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;temps_ecoule&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">historique_stats</span><span class="p">],</span>
+                <span class="s1">&#39;vitesse&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;vitesse_moyenne&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">historique_stats</span><span class="p">],</span>
+                <span class="s1">&#39;densite&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;densite_moyenne&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">historique_stats</span><span class="p">],</span>
+                <span class="s1">&#39;congestion&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;taux_congestion&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">historique_stats</span><span class="p">],</span>
+                <span class="s1">&#39;vehicules&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;total_vehicules&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">historique_stats</span><span class="p">]</span>
+            <span class="p">}</span>
+            
+            <span class="n">metriques_chemin</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">repertoire_sortie</span><span class="p">,</span> 
+                <span class="sa">f</span><span class="s2">&quot;metriques_cles_</span><span class="si">{</span><span class="n">timestamp</span><span class="si">}</span><span class="s2">.json&quot;</span>
+            <span class="p">)</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">metriques_chemin</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">metriques_cles</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">ensure_ascii</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+            <span class="n">fichiers_crees</span><span class="p">[</span><span class="s1">&#39;metriques&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">metriques_chemin</span>
+        
+        <span class="k">return</span> <span class="n">fichiers_crees</span></div>
+
+
+<div class="viewcode-block" id="Export.__str__">
+<a class="viewcode-back" href="../api/export/index.html#export.Export.__str__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Représentation textuelle de l&#39;export.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Export(repertoire=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">repertoire_sortie</span><span class="si">}</span><span class="s2">)&quot;</span></div>
+</div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2025, Aya Zid.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

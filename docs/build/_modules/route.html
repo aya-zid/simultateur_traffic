@@ -1,0 +1,451 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>route &mdash; Documentation Simulateur de Trafic Routier Intelligent 1</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=a12a2fe1"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/translations.js?v=e6b791cb"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Simulateur de Trafic Routier Intelligent
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contenu:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html#presentation">Présentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html#objectifs-du-projet">Objectifs du Projet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html#cas-d-utilisation">Cas d’Utilisation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html#architecture-technique">Architecture Technique</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Utilisation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../usage.html#ligne-de-commande">Ligne de Commande</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../usage.html#options-disponibles">Options Disponibles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage.html#exemples-d-utilisation">Exemples d’Utilisation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../usage.html#utilisation-en-tant-que-module">Utilisation en tant que Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage.html#configuration-du-reseau">Configuration du Réseau</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage.html#format-des-sorties">Format des Sorties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage.html#visualisations">Visualisations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage.html#exemple-complet">Exemple Complet</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../api/conf/index.html">conf</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/conf/index.html#attributes">Attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/conf/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.project"><code class="docutils literal notranslate"><span class="pre">project</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.copyright"><code class="docutils literal notranslate"><span class="pre">copyright</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.author"><code class="docutils literal notranslate"><span class="pre">author</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.release"><code class="docutils literal notranslate"><span class="pre">release</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.extensions"><code class="docutils literal notranslate"><span class="pre">extensions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.autoapi_type"><code class="docutils literal notranslate"><span class="pre">autoapi_type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.autoapi_dirs"><code class="docutils literal notranslate"><span class="pre">autoapi_dirs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.autoapi_add_toctree_entry"><code class="docutils literal notranslate"><span class="pre">autoapi_add_toctree_entry</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.autoapi_root"><code class="docutils literal notranslate"><span class="pre">autoapi_root</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.autoapi_keep_files"><code class="docutils literal notranslate"><span class="pre">autoapi_keep_files</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.napoleon_google_docstring"><code class="docutils literal notranslate"><span class="pre">napoleon_google_docstring</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.napoleon_numpy_docstring"><code class="docutils literal notranslate"><span class="pre">napoleon_numpy_docstring</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.napoleon_include_init_with_doc"><code class="docutils literal notranslate"><span class="pre">napoleon_include_init_with_doc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.napoleon_include_private_with_doc"><code class="docutils literal notranslate"><span class="pre">napoleon_include_private_with_doc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.napoleon_include_special_with_doc"><code class="docutils literal notranslate"><span class="pre">napoleon_include_special_with_doc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.napoleon_use_admonition_for_examples"><code class="docutils literal notranslate"><span class="pre">napoleon_use_admonition_for_examples</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.napoleon_use_admonition_for_notes"><code class="docutils literal notranslate"><span class="pre">napoleon_use_admonition_for_notes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.napoleon_use_admonition_for_references"><code class="docutils literal notranslate"><span class="pre">napoleon_use_admonition_for_references</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.napoleon_use_ivar"><code class="docutils literal notranslate"><span class="pre">napoleon_use_ivar</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.napoleon_use_param"><code class="docutils literal notranslate"><span class="pre">napoleon_use_param</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.napoleon_use_rtype"><code class="docutils literal notranslate"><span class="pre">napoleon_use_rtype</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.html_theme"><code class="docutils literal notranslate"><span class="pre">html_theme</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.html_theme_options"><code class="docutils literal notranslate"><span class="pre">html_theme_options</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.html_static_path"><code class="docutils literal notranslate"><span class="pre">html_static_path</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.master_doc"><code class="docutils literal notranslate"><span class="pre">master_doc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.language"><code class="docutils literal notranslate"><span class="pre">language</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.todo_include_todos"><code class="docutils literal notranslate"><span class="pre">todo_include_todos</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.autoapi_options"><code class="docutils literal notranslate"><span class="pre">autoapi_options</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/route/index.html">route</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/route/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/route/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/route/index.html#route.Route"><code class="docutils literal notranslate"><span class="pre">Route</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/export/index.html">export</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/export/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/export/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/export/index.html#export.Export"><code class="docutils literal notranslate"><span class="pre">Export</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/reseau/index.html">reseau</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/reseau/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/reseau/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/reseau/index.html#reseau.ReseauRoutier"><code class="docutils literal notranslate"><span class="pre">ReseauRoutier</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/vehicule/index.html">vehicule</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/vehicule/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/vehicule/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/vehicule/index.html#vehicule.Vehicule"><code class="docutils literal notranslate"><span class="pre">Vehicule</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/analyseur/index.html">analyseur</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/analyseur/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/analyseur/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/analyseur/index.html#analyseur.Analyseur"><code class="docutils literal notranslate"><span class="pre">Analyseur</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/affichage/index.html">affichage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/affichage/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/affichage/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/affichage/index.html#affichage.Affichage"><code class="docutils literal notranslate"><span class="pre">Affichage</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/simulateur/index.html">simulateur</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/simulateur/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/simulateur/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/simulateur/index.html#simulateur.Simulateur"><code class="docutils literal notranslate"><span class="pre">Simulateur</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/test_simulateur/index.html">test_simulateur</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/test_simulateur/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/test_simulateur/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/test_simulateur/index.html#test_simulateur.TestVehicule"><code class="docutils literal notranslate"><span class="pre">TestVehicule</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/test_simulateur/index.html#test_simulateur.TestRoute"><code class="docutils literal notranslate"><span class="pre">TestRoute</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/test_simulateur/index.html#test_simulateur.TestReseauRoutier"><code class="docutils literal notranslate"><span class="pre">TestReseauRoutier</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/simulateur_trafic/index.html">simulateur_trafic</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/simulateur_trafic/index.html#submodules">Submodules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/simulateur_trafic/main/index.html">simulateur_trafic.main</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">Exemples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#exemple-basique">Exemple Basique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#exemple-avec-configuration-personnalisee">Exemple avec Configuration Personnalisée</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#exemple-avec-analyse-avancee">Exemple avec Analyse Avancée</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#exemple-avec-export-des-donnees">Exemple avec Export des Données</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#exemple-avec-visualisation">Exemple avec Visualisation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#scripts-d-exemple">Scripts d’Exemple</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Simulateur de Trafic Routier Intelligent</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Code du module</a></li>
+      <li class="breadcrumb-item active">route</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Code source de route</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Module Route - Définition de la classe Route</span>
+
+<span class="sd">Ce module définit la classe Route qui représente une route</span>
+<span class="sd">dans le réseau routier. Une route a une longueur, une limite de vitesse,</span>
+<span class="sd">et peut contenir plusieurs véhicules.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="Route">
+<a class="viewcode-back" href="../api/route/index.html#route.Route">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Route</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Représente une route dans le réseau routier.</span>
+<span class="sd">    </span>
+<span class="sd">    Une route est caractérisée par son nom, sa longueur, sa limite de vitesse</span>
+<span class="sd">    et la liste des véhicules qui s&#39;y trouvent.</span>
+<span class="sd">    </span>
+<span class="sd">    Attributes:</span>
+<span class="sd">        nom (str): Nom identifiant de la route</span>
+<span class="sd">        longueur (float): Longueur totale de la route (en mètres)</span>
+<span class="sd">        limite_vitesse (float): Limite de vitesse autorisée (en km/h)</span>
+<span class="sd">        vehicules_presents (dict): Véhicules sur la route {id_vehicule: véhicule}</span>
+<span class="sd">    </span>
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; route = Route(&quot;Autoroute_A1&quot;, 10000, 130)</span>
+<span class="sd">        &gt;&gt;&gt; voiture = Vehicule(1, &quot;Autoroute_A1&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; route.ajouter_vehicule(voiture)</span>
+<span class="sd">        &gt;&gt;&gt; len(route.vehicules_presents)</span>
+<span class="sd">        1</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nom</span><span class="p">,</span> <span class="n">longueur</span><span class="p">,</span> <span class="n">limite_vitesse</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initialise une nouvelle route.</span>
+<span class="sd">        </span>
+<span class="sd">        Args:</span>
+<span class="sd">            nom (str): Nom de la route</span>
+<span class="sd">            longueur (float): Longueur de la route en mètres</span>
+<span class="sd">            limite_vitesse (float): Limite de vitesse en km/h</span>
+<span class="sd">        </span>
+<span class="sd">        Raises:</span>
+<span class="sd">            ValueError: Si la longueur ou la limite de vitesse est négative</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">longueur</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;La longueur doit être positive&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">limite_vitesse</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;La limite de vitesse doit être positive&quot;</span><span class="p">)</span>
+            
+<div class="viewcode-block" id="Route.nom">
+<a class="viewcode-back" href="../api/route/index.html#route.Route.nom">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nom</span> <span class="o">=</span> <span class="n">nom</span></div>
+
+<div class="viewcode-block" id="Route.longueur">
+<a class="viewcode-back" href="../api/route/index.html#route.Route.longueur">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">longueur</span> <span class="o">=</span> <span class="n">longueur</span></div>
+
+<div class="viewcode-block" id="Route.limite_vitesse">
+<a class="viewcode-back" href="../api/route/index.html#route.Route.limite_vitesse">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">limite_vitesse</span> <span class="o">=</span> <span class="n">limite_vitesse</span></div>
+
+<div class="viewcode-block" id="Route.vehicules_presents">
+<a class="viewcode-back" href="../api/route/index.html#route.Route.vehicules_presents">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vehicules_presents</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># Dictionnaire {id: vehicule}</span></div>
+
+    
+<div class="viewcode-block" id="Route.ajouter_vehicule">
+<a class="viewcode-back" href="../api/route/index.html#route.Route.ajouter_vehicule">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">ajouter_vehicule</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vehicule</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Ajoute un véhicule à la route.</span>
+<span class="sd">        </span>
+<span class="sd">        Le véhicule est ajouté à la liste des véhicules présents sur la route.</span>
+<span class="sd">        Vérifie que le véhicule n&#39;est pas déjà présent et que sa position est valide.</span>
+<span class="sd">        </span>
+<span class="sd">        Args:</span>
+<span class="sd">            vehicule (Vehicule): Véhicule à ajouter à la route</span>
+<span class="sd">        </span>
+<span class="sd">        Raises:</span>
+<span class="sd">            ValueError: Si le véhicule est déjà sur la route ou position invalide</span>
+<span class="sd">        </span>
+<span class="sd">        Example:</span>
+<span class="sd">            &gt;&gt;&gt; route = Route(&quot;Route_A&quot;, 1000, 90)</span>
+<span class="sd">            &gt;&gt;&gt; voiture = Vehicule(1, &quot;Route_A&quot;)</span>
+<span class="sd">            &gt;&gt;&gt; route.ajouter_vehicule(voiture)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">vehicule</span><span class="o">.</span><span class="n">identifiant</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">vehicules_presents</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Le véhicule </span><span class="si">{</span><span class="n">vehicule</span><span class="o">.</span><span class="n">identifiant</span><span class="si">}</span><span class="s2"> est déjà sur cette route&quot;</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="n">vehicule</span><span class="o">.</span><span class="n">position</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">longueur</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Position </span><span class="si">{</span><span class="n">vehicule</span><span class="o">.</span><span class="n">position</span><span class="si">}</span><span class="s2"> dépasse la longueur de la route </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">longueur</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">vehicules_presents</span><span class="p">[</span><span class="n">vehicule</span><span class="o">.</span><span class="n">identifiant</span><span class="p">]</span> <span class="o">=</span> <span class="n">vehicule</span>
+        <span class="n">vehicule</span><span class="o">.</span><span class="n">route_actuelle</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">nom</span></div>
+
+    
+<div class="viewcode-block" id="Route.supprimer_vehicule">
+<a class="viewcode-back" href="../api/route/index.html#route.Route.supprimer_vehicule">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">supprimer_vehicule</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">identifiant_vehicule</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Supprime un véhicule de la route.</span>
+<span class="sd">        </span>
+<span class="sd">        Args:</span>
+<span class="sd">            identifiant_vehicule (int): Identifiant du véhicule à supprimer</span>
+<span class="sd">        </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            Vehicule: Le véhicule supprimé ou None si non trouvé</span>
+<span class="sd">        </span>
+<span class="sd">        Example:</span>
+<span class="sd">            &gt;&gt;&gt; route.supprimer_vehicule(1)</span>
+<span class="sd">            &lt;Vehicule object at 0x...&gt;</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">vehicules_presents</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">identifiant_vehicule</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span></div>
+
+    
+<div class="viewcode-block" id="Route.mettre_a_jour_vehicules">
+<a class="viewcode-back" href="../api/route/index.html#route.Route.mettre_a_jour_vehicules">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">mettre_a_jour_vehicules</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Met à jour tous les véhicules sur la route.</span>
+<span class="sd">        </span>
+<span class="sd">        Cette méthode devrait être appelée à chaque pas de simulation</span>
+<span class="sd">        pour mettre à jour les positions et gérer les véhicules qui</span>
+<span class="sd">        quittent la route.</span>
+<span class="sd">        </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            list: Liste des véhicules qui ont quitté la route</span>
+<span class="sd">        </span>
+<span class="sd">        Example:</span>
+<span class="sd">            &gt;&gt;&gt; vehicules_sortis = route.mettre_a_jour_vehicules()</span>
+<span class="sd">            &gt;&gt;&gt; for vehicule in vehicules_sortis:</span>
+<span class="sd">            ...     print(f&quot;Véhicule {vehicule.identifiant} a quitté la route&quot;)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">vehicules_sortis</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">vehicules_a_supprimer</span> <span class="o">=</span> <span class="p">[]</span>
+        
+        <span class="k">for</span> <span class="n">identifiant</span><span class="p">,</span> <span class="n">vehicule</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">vehicules_presents</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="c1"># Vérifier si le véhicule a dépassé la fin de la route</span>
+            <span class="k">if</span> <span class="n">vehicule</span><span class="o">.</span><span class="n">position</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">longueur</span><span class="p">:</span>
+                <span class="n">vehicules_sortis</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">vehicule</span><span class="p">)</span>
+                <span class="n">vehicules_a_supprimer</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">identifiant</span><span class="p">)</span>
+        
+        <span class="c1"># Supprimer les véhicules qui ont quitté la route</span>
+        <span class="k">for</span> <span class="n">identifiant</span> <span class="ow">in</span> <span class="n">vehicules_a_supprimer</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">supprimer_vehicule</span><span class="p">(</span><span class="n">identifiant</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">vehicules_sortis</span></div>
+
+    
+<div class="viewcode-block" id="Route.get_nombre_vehicules">
+<a class="viewcode-back" href="../api/route/index.html#route.Route.get_nombre_vehicules">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_nombre_vehicules</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Retourne le nombre de véhicules actuellement sur la route.</span>
+<span class="sd">        </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            int: Nombre de véhicules présents</span>
+<span class="sd">        </span>
+<span class="sd">        Example:</span>
+<span class="sd">            &gt;&gt;&gt; route.get_nombre_vehicules()</span>
+<span class="sd">            5</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">vehicules_presents</span><span class="p">)</span></div>
+
+    
+<div class="viewcode-block" id="Route.get_densite_trafic">
+<a class="viewcode-back" href="../api/route/index.html#route.Route.get_densite_trafic">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_densite_trafic</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Calcule la densité du trafic sur la route.</span>
+<span class="sd">        </span>
+<span class="sd">        La densité est calculée comme le nombre de véhicules par kilomètre.</span>
+<span class="sd">        </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            float: Densité de trafic (véhicules/km)</span>
+<span class="sd">        </span>
+<span class="sd">        Example:</span>
+<span class="sd">            &gt;&gt;&gt; route.get_densite_trafic()</span>
+<span class="sd">            25.8</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">longueur_km</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">longueur</span> <span class="o">/</span> <span class="mi">1000</span>  <span class="c1"># Conversion en kilomètres</span>
+        <span class="k">if</span> <span class="n">longueur_km</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">vehicules_presents</span><span class="p">)</span> <span class="o">/</span> <span class="n">longueur_km</span></div>
+
+    
+<div class="viewcode-block" id="Route.__str__">
+<a class="viewcode-back" href="../api/route/index.html#route.Route.__str__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Représentation textuelle de la route.</span>
+<span class="sd">        </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            str: Description de la route</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Route &#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nom</span><span class="si">}</span><span class="s2">&#39; (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">longueur</span><span class="si">}</span><span class="s2">m, limite: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">limite_vitesse</span><span class="si">}</span><span class="s2">km/h, </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">vehicules_presents</span><span class="p">)</span><span class="si">}</span><span class="s2"> véhicules)&quot;</span></div>
+
+    
+<div class="viewcode-block" id="Route.__repr__">
+<a class="viewcode-back" href="../api/route/index.html#route.Route.__repr__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Représentation technique de la route.</span>
+<span class="sd">        </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            str: Représentation pouvant être utilisée pour recréer l&#39;objet</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Route(nom=&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nom</span><span class="si">}</span><span class="s2">&#39;, longueur=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">longueur</span><span class="si">}</span><span class="s2">, limite_vitesse=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">limite_vitesse</span><span class="si">}</span><span class="s2">)&quot;</span></div>
+</div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2025, Aya Zid.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

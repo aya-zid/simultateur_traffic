@@ -1,0 +1,149 @@
+export
+======
+
+.. py:module:: export
+
+.. autoapi-nested-parse::
+
+   Module Export - Export des données de simulation
+
+   Ce module fournit des fonctions pour exporter les résultats de simulation
+   dans différents formats (CSV, JSON, Excel) et générer des rapports.
+
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   export.Export
+
+
+Module Contents
+---------------
+
+.. py:class:: Export(repertoire_sortie='exports')
+
+   Classe pour l'export des données de simulation.
+
+   Cette classe permet d'exporter les résultats de simulation
+   dans différents formats pour analyse ultérieure.
+
+   :ivar format_date: Format pour les horodatages
+   :vartype format_date: str
+   :ivar repertoire_sortie: Répertoire par défaut pour les exports
+
+   :vartype repertoire_sortie: str
+
+   .. admonition:: Exemple
+
+      >>> export = Export()
+      >>> export.exporter_csv(historique_stats, "resultats_simulation.csv")
+
+
+   .. py:attribute:: repertoire_sortie
+      :value: 'exports'
+
+
+
+   .. py:attribute:: format_date
+      :value: '%Y%m%d_%H%M%S'
+
+
+
+   .. py:method:: exporter_json(data: Dict, nom_fichier: Optional[str] = None)
+
+      Exporte les données au format JSON.
+
+      :param data: Données à exporter
+      :type data: dict
+      :param nom_fichier: Nom du fichier de sortie
+      :type nom_fichier: str, optional
+
+      :returns: Chemin du fichier créé
+      :rtype: str
+
+      .. admonition:: Exemple
+
+         >>> chemin = export.exporter_json(statistiques, "stats.json")
+
+
+
+   .. py:method:: exporter_csv(historique_stats: List[Dict], nom_fichier: Optional[str] = None)
+
+      Exporte l'historique des statistiques au format CSV.
+
+      :param historique_stats: Historique des statistiques
+      :type historique_stats: list
+      :param nom_fichier: Nom du fichier de sortie
+      :type nom_fichier: str, optional
+
+      :returns: Chemin du fichier créé
+      :rtype: str
+
+      .. admonition:: Exemple
+
+         >>> chemin = export.exporter_csv(historique_stats, "resultats.csv")
+
+
+
+   .. py:method:: exporter_excel(historique_stats: List[Dict], nom_fichier: Optional[str] = None)
+
+      Exporte les données au format Excel avec plusieurs onglets.
+
+      :param historique_stats: Historique des statistiques
+      :type historique_stats: list
+      :param nom_fichier: Nom du fichier de sortie
+      :type nom_fichier: str, optional
+
+      :returns: Chemin du fichier créé
+      :rtype: str
+
+      .. admonition:: Exemple
+
+         >>> chemin = export.exporter_excel(historique_stats, "rapport.xlsx")
+
+
+
+   .. py:method:: generer_rapport_complet(simulateur, nom_fichier: Optional[str] = None)
+
+      Génère un rapport complet avec toutes les données de simulation.
+
+      :param simulateur: Instance du simulateur
+      :param nom_fichier: Nom du fichier de sortie
+      :type nom_fichier: str, optional
+
+      :returns: Chemin du fichier créé
+      :rtype: str
+
+      .. admonition:: Exemple
+
+         >>> chemin = export.generer_rapport_complet(simulateur)
+
+
+
+   .. py:method:: exporter_pour_visualisation(historique_stats: List[Dict], prefixe: str = 'visu')
+
+      Exporte les données dans un format optimisé pour la visualisation.
+
+      :param historique_stats: Historique des statistiques
+      :type historique_stats: list
+      :param prefixe: Préfixe pour les fichiers
+      :type prefixe: str
+
+      :returns: Chemins des fichiers créés
+      :rtype: dict
+
+      .. admonition:: Exemple
+
+         >>> fichiers = export.exporter_pour_visualisation(historique_stats)
+
+
+
+   .. py:method:: __str__()
+
+      Représentation textuelle de l'export.
+
+
+

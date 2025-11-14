@@ -1,0 +1,132 @@
+vehicule
+========
+
+.. py:module:: vehicule
+
+.. autoapi-nested-parse::
+
+   Module Vehicule - Définition de la classe Vehicule
+
+   Ce module définit la classe Vehicule qui représente un véhicule
+   dans la simulation de trafic routier. Chaque véhicule a une position,
+   une vitesse, et peut se déplacer sur différentes routes.
+
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   vehicule.Vehicule
+
+
+Module Contents
+---------------
+
+.. py:class:: Vehicule(identifiant, route_actuelle, position=0, vitesse=0)
+
+   Représente un véhicule dans le simulateur de trafic.
+
+   Un véhicule est caractérisé par sa position sur une route,
+   sa vitesse actuelle, et peut se déplacer ou changer de route.
+
+   :ivar identifiant: Identifiant unique du véhicule
+   :vartype identifiant: int
+   :ivar route_actuelle: Nom de la route sur laquelle se trouve le véhicule
+   :vartype route_actuelle: str
+   :ivar position: Position actuelle sur la route (en mètres)
+   :vartype position: float
+   :ivar vitesse: Vitesse actuelle du véhicule (en km/h)
+   :vartype vitesse: float
+   :ivar historique_routes: Historique des routes empruntées
+
+   :vartype historique_routes: list
+
+   .. admonition:: Exemple
+
+      >>> voiture = Vehicule(1, "Route_A", position=0, vitesse=50)
+      >>> voiture.avancer(100)
+      >>> print(voiture.position)
+      100
+
+
+   .. py:attribute:: identifiant
+
+
+   .. py:attribute:: route_actuelle
+
+
+   .. py:attribute:: position
+      :value: 0
+
+
+
+   .. py:attribute:: vitesse
+      :value: 0
+
+
+
+   .. py:attribute:: historique_routes
+
+
+   .. py:method:: avancer(distance)
+
+      Déplace le véhicule vers l'avant sur sa route actuelle.
+
+      La position du véhicule est augmentée de la distance spécifiée.
+      Cette méthode simule le mouvement du véhicule pendant un intervalle de temps.
+
+      :param distance: Distance à parcourir en mètres
+      :type distance: float
+
+      .. admonition:: Exemple
+
+         >>> voiture = Vehicule(1, "Route_A", position=0)
+         >>> voiture.avancer(150.5)
+         >>> voiture.position
+         150.5
+
+
+
+   .. py:method:: changer_de_route(nouvelle_route, nouvelle_position=0)
+
+      Change la route actuelle du véhicule.
+
+      Le véhicule quitte sa route actuelle et rejoint une nouvelle route
+      à une position spécifiée. L'ancienne route est ajoutée à l'historique.
+
+      :param nouvelle_route: Nom de la nouvelle route
+      :type nouvelle_route: str
+      :param nouvelle_position: Position sur la nouvelle route (défaut: 0)
+      :type nouvelle_position: float
+
+      .. admonition:: Exemple
+
+         >>> voiture = Vehicule(1, "Route_A", position=100)
+         >>> voiture.changer_de_route("Route_B", 50)
+         >>> voiture.route_actuelle
+         'Route_B'
+         >>> voiture.position
+         50
+
+
+
+   .. py:method:: __str__()
+
+      Représentation textuelle du véhicule.
+
+      :returns: Description du véhicule
+      :rtype: str
+
+
+
+   .. py:method:: __repr__()
+
+      Représentation technique du véhicule.
+
+      :returns: Représentation pouvant être utilisée pour recréer l'objet
+      :rtype: str
+
+
+

@@ -1,0 +1,410 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>conf &mdash; Documentation Simulateur de Trafic Routier Intelligent 1</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=a12a2fe1"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/translations.js?v=e6b791cb"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Simulateur de Trafic Routier Intelligent
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contenu:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html#presentation">Présentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html#objectifs-du-projet">Objectifs du Projet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html#cas-d-utilisation">Cas d’Utilisation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html#architecture-technique">Architecture Technique</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Utilisation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../usage.html#ligne-de-commande">Ligne de Commande</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../usage.html#options-disponibles">Options Disponibles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usage.html#exemples-d-utilisation">Exemples d’Utilisation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../usage.html#utilisation-en-tant-que-module">Utilisation en tant que Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage.html#configuration-du-reseau">Configuration du Réseau</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage.html#format-des-sorties">Format des Sorties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage.html#visualisations">Visualisations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage.html#exemple-complet">Exemple Complet</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../api/conf/index.html">conf</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/conf/index.html#attributes">Attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/conf/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.project"><code class="docutils literal notranslate"><span class="pre">project</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.copyright"><code class="docutils literal notranslate"><span class="pre">copyright</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.author"><code class="docutils literal notranslate"><span class="pre">author</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.release"><code class="docutils literal notranslate"><span class="pre">release</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.extensions"><code class="docutils literal notranslate"><span class="pre">extensions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.autoapi_type"><code class="docutils literal notranslate"><span class="pre">autoapi_type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.autoapi_dirs"><code class="docutils literal notranslate"><span class="pre">autoapi_dirs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.autoapi_add_toctree_entry"><code class="docutils literal notranslate"><span class="pre">autoapi_add_toctree_entry</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.autoapi_root"><code class="docutils literal notranslate"><span class="pre">autoapi_root</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.autoapi_keep_files"><code class="docutils literal notranslate"><span class="pre">autoapi_keep_files</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.napoleon_google_docstring"><code class="docutils literal notranslate"><span class="pre">napoleon_google_docstring</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.napoleon_numpy_docstring"><code class="docutils literal notranslate"><span class="pre">napoleon_numpy_docstring</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.napoleon_include_init_with_doc"><code class="docutils literal notranslate"><span class="pre">napoleon_include_init_with_doc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.napoleon_include_private_with_doc"><code class="docutils literal notranslate"><span class="pre">napoleon_include_private_with_doc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.napoleon_include_special_with_doc"><code class="docutils literal notranslate"><span class="pre">napoleon_include_special_with_doc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.napoleon_use_admonition_for_examples"><code class="docutils literal notranslate"><span class="pre">napoleon_use_admonition_for_examples</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.napoleon_use_admonition_for_notes"><code class="docutils literal notranslate"><span class="pre">napoleon_use_admonition_for_notes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.napoleon_use_admonition_for_references"><code class="docutils literal notranslate"><span class="pre">napoleon_use_admonition_for_references</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.napoleon_use_ivar"><code class="docutils literal notranslate"><span class="pre">napoleon_use_ivar</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.napoleon_use_param"><code class="docutils literal notranslate"><span class="pre">napoleon_use_param</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.napoleon_use_rtype"><code class="docutils literal notranslate"><span class="pre">napoleon_use_rtype</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.html_theme"><code class="docutils literal notranslate"><span class="pre">html_theme</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.html_theme_options"><code class="docutils literal notranslate"><span class="pre">html_theme_options</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.html_static_path"><code class="docutils literal notranslate"><span class="pre">html_static_path</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.master_doc"><code class="docutils literal notranslate"><span class="pre">master_doc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.language"><code class="docutils literal notranslate"><span class="pre">language</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.todo_include_todos"><code class="docutils literal notranslate"><span class="pre">todo_include_todos</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/conf/index.html#conf.autoapi_options"><code class="docutils literal notranslate"><span class="pre">autoapi_options</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/route/index.html">route</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/route/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/route/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/route/index.html#route.Route"><code class="docutils literal notranslate"><span class="pre">Route</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/export/index.html">export</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/export/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/export/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/export/index.html#export.Export"><code class="docutils literal notranslate"><span class="pre">Export</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/reseau/index.html">reseau</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/reseau/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/reseau/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/reseau/index.html#reseau.ReseauRoutier"><code class="docutils literal notranslate"><span class="pre">ReseauRoutier</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/vehicule/index.html">vehicule</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/vehicule/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/vehicule/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/vehicule/index.html#vehicule.Vehicule"><code class="docutils literal notranslate"><span class="pre">Vehicule</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/analyseur/index.html">analyseur</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/analyseur/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/analyseur/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/analyseur/index.html#analyseur.Analyseur"><code class="docutils literal notranslate"><span class="pre">Analyseur</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/affichage/index.html">affichage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/affichage/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/affichage/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/affichage/index.html#affichage.Affichage"><code class="docutils literal notranslate"><span class="pre">Affichage</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/simulateur/index.html">simulateur</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/simulateur/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/simulateur/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/simulateur/index.html#simulateur.Simulateur"><code class="docutils literal notranslate"><span class="pre">Simulateur</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/test_simulateur/index.html">test_simulateur</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/test_simulateur/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/test_simulateur/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/test_simulateur/index.html#test_simulateur.TestVehicule"><code class="docutils literal notranslate"><span class="pre">TestVehicule</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/test_simulateur/index.html#test_simulateur.TestRoute"><code class="docutils literal notranslate"><span class="pre">TestRoute</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/test_simulateur/index.html#test_simulateur.TestReseauRoutier"><code class="docutils literal notranslate"><span class="pre">TestReseauRoutier</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/simulateur_trafic/index.html">simulateur_trafic</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/simulateur_trafic/index.html#submodules">Submodules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/simulateur_trafic/main/index.html">simulateur_trafic.main</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">Exemples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#exemple-basique">Exemple Basique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#exemple-avec-configuration-personnalisee">Exemple avec Configuration Personnalisée</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#exemple-avec-analyse-avancee">Exemple avec Analyse Avancée</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#exemple-avec-export-des-donnees">Exemple avec Export des Données</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#exemple-avec-visualisation">Exemple avec Visualisation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#scripts-d-exemple">Scripts d’Exemple</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Simulateur de Trafic Routier Intelligent</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Code du module</a></li>
+      <li class="breadcrumb-item active">conf</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Code source de conf</h1><div class="highlight"><pre>
+<span></span><span class="c1"># Configuration file for the Sphinx documentation builder.</span>
+<span class="c1"># docs/source/conf.py</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
+
+<span class="c1"># Add the project to the Python path</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;..&#39;</span><span class="p">))</span>  
+
+<span class="c1"># Project information</span>
+<div class="viewcode-block" id="project">
+<a class="viewcode-back" href="../api/conf/index.html#conf.project">[docs]</a>
+<span class="n">project</span> <span class="o">=</span> <span class="s1">&#39;Simulateur de Trafic Routier Intelligent&#39;</span></div>
+
+<div class="viewcode-block" id="copyright">
+<a class="viewcode-back" href="../api/conf/index.html#conf.copyright">[docs]</a>
+<span class="n">copyright</span> <span class="o">=</span> <span class="s1">&#39;2025, Aya Zid&#39;</span></div>
+
+<div class="viewcode-block" id="author">
+<a class="viewcode-back" href="../api/conf/index.html#conf.author">[docs]</a>
+<span class="n">author</span> <span class="o">=</span> <span class="s1">&#39;Aya Zid&#39;</span></div>
+
+<div class="viewcode-block" id="release">
+<a class="viewcode-back" href="../api/conf/index.html#conf.release">[docs]</a>
+<span class="n">release</span> <span class="o">=</span> <span class="s1">&#39;1&#39;</span></div>
+
+
+<span class="c1"># Extensions</span>
+<div class="viewcode-block" id="extensions">
+<a class="viewcode-back" href="../api/conf/index.html#conf.extensions">[docs]</a>
+<span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;sphinx.ext.autodoc&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sphinx.ext.napoleon&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sphinx.ext.viewcode&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sphinx.ext.intersphinx&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sphinx.ext.todo&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sphinx.ext.coverage&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sphinx.ext.mathjax&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sphinx.ext.ifconfig&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sphinx.ext.githubpages&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sphinx_rtd_theme&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;autoapi.extension&#39;</span><span class="p">,</span> 
+
+<span class="p">]</span></div>
+
+
+<span class="c1"># AutoAPI configuration</span>
+<div class="viewcode-block" id="autoapi_type">
+<a class="viewcode-back" href="../api/conf/index.html#conf.autoapi_type">[docs]</a>
+<span class="n">autoapi_type</span> <span class="o">=</span> <span class="s1">&#39;python&#39;</span></div>
+
+<div class="viewcode-block" id="autoapi_dirs">
+<a class="viewcode-back" href="../api/conf/index.html#conf.autoapi_dirs">[docs]</a>
+<span class="n">autoapi_dirs</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;../..&#39;</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="autoapi_add_toctree_entry">
+<a class="viewcode-back" href="../api/conf/index.html#conf.autoapi_add_toctree_entry">[docs]</a>
+<span class="n">autoapi_add_toctree_entry</span> <span class="o">=</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="autoapi_root">
+<a class="viewcode-back" href="../api/conf/index.html#conf.autoapi_root">[docs]</a>
+<span class="n">autoapi_root</span> <span class="o">=</span> <span class="s1">&#39;api&#39;</span></div>
+
+<div class="viewcode-block" id="autoapi_keep_files">
+<a class="viewcode-back" href="../api/conf/index.html#conf.autoapi_keep_files">[docs]</a>
+<span class="n">autoapi_keep_files</span> <span class="o">=</span> <span class="kc">False</span></div>
+
+
+<span class="c1"># Napoleon settings (for Google-style docstrings)</span>
+<div class="viewcode-block" id="napoleon_google_docstring">
+<a class="viewcode-back" href="../api/conf/index.html#conf.napoleon_google_docstring">[docs]</a>
+<span class="n">napoleon_google_docstring</span> <span class="o">=</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="napoleon_numpy_docstring">
+<a class="viewcode-back" href="../api/conf/index.html#conf.napoleon_numpy_docstring">[docs]</a>
+<span class="n">napoleon_numpy_docstring</span> <span class="o">=</span> <span class="kc">False</span></div>
+
+<div class="viewcode-block" id="napoleon_include_init_with_doc">
+<a class="viewcode-back" href="../api/conf/index.html#conf.napoleon_include_init_with_doc">[docs]</a>
+<span class="n">napoleon_include_init_with_doc</span> <span class="o">=</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="napoleon_include_private_with_doc">
+<a class="viewcode-back" href="../api/conf/index.html#conf.napoleon_include_private_with_doc">[docs]</a>
+<span class="n">napoleon_include_private_with_doc</span> <span class="o">=</span> <span class="kc">False</span></div>
+
+<div class="viewcode-block" id="napoleon_include_special_with_doc">
+<a class="viewcode-back" href="../api/conf/index.html#conf.napoleon_include_special_with_doc">[docs]</a>
+<span class="n">napoleon_include_special_with_doc</span> <span class="o">=</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="napoleon_use_admonition_for_examples">
+<a class="viewcode-back" href="../api/conf/index.html#conf.napoleon_use_admonition_for_examples">[docs]</a>
+<span class="n">napoleon_use_admonition_for_examples</span> <span class="o">=</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="napoleon_use_admonition_for_notes">
+<a class="viewcode-back" href="../api/conf/index.html#conf.napoleon_use_admonition_for_notes">[docs]</a>
+<span class="n">napoleon_use_admonition_for_notes</span> <span class="o">=</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="napoleon_use_admonition_for_references">
+<a class="viewcode-back" href="../api/conf/index.html#conf.napoleon_use_admonition_for_references">[docs]</a>
+<span class="n">napoleon_use_admonition_for_references</span> <span class="o">=</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="napoleon_use_ivar">
+<a class="viewcode-back" href="../api/conf/index.html#conf.napoleon_use_ivar">[docs]</a>
+<span class="n">napoleon_use_ivar</span> <span class="o">=</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="napoleon_use_param">
+<a class="viewcode-back" href="../api/conf/index.html#conf.napoleon_use_param">[docs]</a>
+<span class="n">napoleon_use_param</span> <span class="o">=</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="napoleon_use_rtype">
+<a class="viewcode-back" href="../api/conf/index.html#conf.napoleon_use_rtype">[docs]</a>
+<span class="n">napoleon_use_rtype</span> <span class="o">=</span> <span class="kc">True</span></div>
+
+
+<span class="c1"># HTML theme</span>
+<div class="viewcode-block" id="html_theme">
+<a class="viewcode-back" href="../api/conf/index.html#conf.html_theme">[docs]</a>
+<span class="n">html_theme</span> <span class="o">=</span> <span class="s1">&#39;sphinx_rtd_theme&#39;</span></div>
+
+
+<span class="c1"># Theme options</span>
+<div class="viewcode-block" id="html_theme_options">
+<a class="viewcode-back" href="../api/conf/index.html#conf.html_theme_options">[docs]</a>
+<span class="n">html_theme_options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;navigation_depth&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+    <span class="s1">&#39;collapse_navigation&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s1">&#39;titles_only&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s1">&#39;display_version&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+<span class="p">}</span></div>
+
+
+<span class="c1"># Static files</span>
+<div class="viewcode-block" id="html_static_path">
+<a class="viewcode-back" href="../api/conf/index.html#conf.html_static_path">[docs]</a>
+<span class="n">html_static_path</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;_static&#39;</span><span class="p">]</span></div>
+
+
+<span class="c1"># Master document</span>
+<div class="viewcode-block" id="master_doc">
+<a class="viewcode-back" href="../api/conf/index.html#conf.master_doc">[docs]</a>
+<span class="n">master_doc</span> <span class="o">=</span> <span class="s1">&#39;index&#39;</span></div>
+
+
+<span class="c1"># Language</span>
+<div class="viewcode-block" id="language">
+<a class="viewcode-back" href="../api/conf/index.html#conf.language">[docs]</a>
+<span class="n">language</span> <span class="o">=</span> <span class="s1">&#39;fr&#39;</span></div>
+
+
+<span class="c1"># Enable TODOs</span>
+<div class="viewcode-block" id="todo_include_todos">
+<a class="viewcode-back" href="../api/conf/index.html#conf.todo_include_todos">[docs]</a>
+<span class="n">todo_include_todos</span> <span class="o">=</span> <span class="kc">True</span></div>
+
+
+<span class="c1"># AutoAPI options</span>
+<div class="viewcode-block" id="autoapi_options">
+<a class="viewcode-back" href="../api/conf/index.html#conf.autoapi_options">[docs]</a>
+<span class="n">autoapi_options</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;members&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;undoc-members&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;show-inheritance&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;show-module-summary&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;special-members&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;imported-members&#39;</span><span class="p">,</span>
+<span class="p">]</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2025, Aya Zid.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

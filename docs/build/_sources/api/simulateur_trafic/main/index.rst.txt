@@ -1,0 +1,58 @@
+simulateur_trafic.main
+======================
+
+.. py:module:: simulateur_trafic.main
+
+.. autoapi-nested-parse::
+
+   Module principal - Point d'entrée de l'application de simulation de trafic
+
+   Ce module lance la simulation de trafic routier avec les paramètres spécifiés.
+   Il intègre l'affichage graphique et l'export des résultats.
+
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   simulateur_trafic.main.reponse
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   simulateur_trafic.main.main
+   simulateur_trafic.main.demo_rapide
+
+
+Module Contents
+---------------
+
+.. py:function:: main()
+
+   Fonction principale qui lance la simulation de trafic avec visualisation.
+
+   Cette fonction parse les arguments de ligne de commande,
+   initialise le simulateur, les modules d'affichage et d'export,
+   et lance la simulation complète.
+
+
+.. py:function:: demo_rapide()
+
+   Fonction de démonstration rapide pour tester le système.
+
+   Cette fonction peut être appelée pour une démonstration rapide
+   sans arguments en ligne de commande.
+
+   .. admonition:: Exemple
+
+      >>> from main import demo_rapide
+      >>> demo_rapide()
+
+
+.. py:data:: reponse
+

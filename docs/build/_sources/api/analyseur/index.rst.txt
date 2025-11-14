@@ -1,0 +1,121 @@
+analyseur
+=========
+
+.. py:module:: analyseur
+
+.. autoapi-nested-parse::
+
+   Module Analyseur - Analyse des statistiques de simulation
+
+   Ce module définit la classe Analyseur qui calcule diverses métriques
+   et statistiques sur le réseau routier et la circulation.
+
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   analyseur.Analyseur
+
+
+Module Contents
+---------------
+
+.. py:class:: Analyseur(reseau)
+
+   Analyseur des statistiques de trafic routier.
+
+   Cette classe calcule les métriques de performance du réseau
+   comme les vitesses moyennes, les zones de congestion, et les temps de parcours.
+
+   :ivar reseau: Réseau routier à analyser
+   :vartype reseau: ReseauRoutier
+   :ivar historique_congestion: Historique des niveaux de congestion
+
+   :vartype historique_congestion: list
+
+   .. admonition:: Exemple
+
+      >>> analyseur = Analyseur(reseau)
+      >>> stats = analyseur.calculer_statistiques_tour()
+      >>> print(f"Vitesse moyenne: {stats['vitesse_moyenne']} km/h")
+
+
+   .. py:attribute:: reseau
+
+
+   .. py:attribute:: historique_congestion
+      :value: []
+
+
+
+   .. py:method:: calculer_statistiques_tour() -> Dict
+
+      Calcule les statistiques pour le tour actuel.
+
+      :returns: Dictionnaire contenant toutes les statistiques du tour
+      :rtype: dict
+
+      .. admonition:: Exemple
+
+         >>> stats = analyseur.calculer_statistiques_tour()
+         >>> print(stats['vitesse_moyenne'])
+         65.5
+
+
+
+   .. py:method:: calculer_statistiques_globales() -> Dict
+
+      Calcule les statistiques globales sur toute la simulation.
+
+      :returns: Statistiques globales résumées
+      :rtype: dict
+
+      .. admonition:: Exemple
+
+         >>> stats_globales = analyseur.calculer_statistiques_globales()
+         >>> print(f"Congestion maximale: {stats_globales['congestion_max']}%")
+
+
+
+   .. py:method:: identifier_zones_congestion(seuil=70.0) -> List[Dict]
+
+      Identifie les routes avec un niveau de congestion élevé.
+
+      :param seuil: Seuil de congestion en pourcentage (défaut: 70%)
+      :type seuil: float
+
+      :returns: Liste des routes congestionnées avec leurs statistiques
+      :rtype: list
+
+      .. admonition:: Exemple
+
+         >>> zones_congestion = analyseur.identifier_zones_congestion(seuil=80)
+         >>> for zone in zones_congestion:
+         ...     print(f"Route {zone['route']}: {zone['taux_congestion']}%")
+
+
+
+   .. py:method:: calculer_temps_parcours_moyen(longueur_parcours=1000) -> float
+
+      Calcule le temps de parcours moyen pour une distance donnée.
+
+      :param longueur_parcours: Distance du parcours en mètres (défaut: 1000)
+      :type longueur_parcours: float
+
+      :returns: Temps de parcours moyen en secondes
+      :rtype: float
+
+
+
+   .. py:method:: generer_rapport_performance() -> Dict
+
+      Génère un rapport complet de performance du réseau.
+
+      :returns: Rapport détaillé de performance
+      :rtype: dict
+
+
+

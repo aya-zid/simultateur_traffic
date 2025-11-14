@@ -1,0 +1,99 @@
+test_simulateur
+===============
+
+.. py:module:: test_simulateur
+
+.. autoapi-nested-parse::
+
+   Tests unitaires pour le simulateur de trafic
+
+   Ce module contient les tests unitaires pour les différentes
+   composantes du simulateur de trafic routier.
+
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   test_simulateur.TestVehicule
+   test_simulateur.TestRoute
+   test_simulateur.TestReseauRoutier
+
+
+Module Contents
+---------------
+
+.. py:class:: TestVehicule(methodName='runTest')
+
+   Bases: :py:obj:`unittest.TestCase`
+
+
+   Tests pour la classe Vehicule.
+
+
+   .. py:method:: test_creation_vehicule()
+
+      Test la création d'un véhicule.
+
+
+
+   .. py:method:: test_avancer_vehicule()
+
+      Test le déplacement d'un véhicule.
+
+
+
+   .. py:method:: test_changer_route()
+
+      Test le changement de route d'un véhicule.
+
+
+
+.. py:class:: TestRoute(methodName='runTest')
+
+   Bases: :py:obj:`unittest.TestCase`
+
+
+   Tests pour la classe Route.
+
+
+   .. py:method:: test_creation_route()
+
+      Test la création d'une route.
+
+
+
+   .. py:method:: test_ajouter_vehicule()
+
+      Test l'ajout d'un véhicule à une route.
+
+
+
+.. py:class:: TestReseauRoutier(methodName='runTest')
+
+   Bases: :py:obj:`unittest.TestCase`
+
+
+   Tests pour la classe ReseauRoutier.
+
+
+   .. py:method:: setUp()
+
+      Initialisation avant chaque test.
+
+
+
+   .. py:method:: test_ajouter_route()
+
+      Test l'ajout de routes au réseau.
+
+
+
+   .. py:method:: test_ajouter_intersection()
+
+      Test l'ajout d'intersections.
+
+
+

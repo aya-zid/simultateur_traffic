@@ -1,0 +1,122 @@
+simulateur
+==========
+
+.. py:module:: simulateur
+
+.. autoapi-nested-parse::
+
+   Module Simulateur - Classe principale de simulation
+
+   Ce module définit la classe Simulateur qui orchestre la simulation complète
+   du trafic routier. Il gère le temps, met à jour le réseau et collecte les statistiques.
+
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   simulateur.Simulateur
+
+
+Module Contents
+---------------
+
+.. py:class:: Simulateur(fichier_config=None)
+
+   Simulateur principal du trafic routier.
+
+   Cette classe orchestre la simulation complète en gérant le temps,
+   mettant à jour l'état du réseau, et collectant les statistiques.
+
+   :ivar reseau: Réseau routier à simuler
+   :vartype reseau: ReseauRoutier
+   :ivar analyseur: Analyseur des statistiques de simulation
+   :vartype analyseur: Analyseur
+   :ivar temps_ecoule: Temps écoulé depuis le début de la simulation (secondes)
+   :vartype temps_ecoule: float
+   :ivar historique_stats: Historique des statistiques à chaque pas de temps
+   :vartype historique_stats: list
+   :ivar actif: État de la simulation (en cours ou arrêtée)
+
+   :vartype actif: bool
+
+   .. admonition:: Exemple
+
+      >>> simulateur = Simulateur("data/config_reseau.json")
+      >>> simulateur.lancer_simulation(n_tours=60, delta_t=60)
+
+
+   .. py:attribute:: reseau
+
+
+   .. py:attribute:: analyseur
+
+
+   .. py:attribute:: temps_ecoule
+      :value: 0
+
+
+
+   .. py:attribute:: historique_stats
+      :value: []
+
+
+
+   .. py:attribute:: actif
+      :value: False
+
+
+
+   .. py:method:: charger_configuration(fichier_config)
+
+      Charge la configuration du réseau depuis un fichier JSON.
+
+      :param fichier_config: Chemin vers le fichier de configuration JSON
+      :type fichier_config: str
+
+      .. admonition:: Exemple
+
+         >>> simulateur.charger_configuration("config/reseau_simple.json")
+
+
+
+   .. py:method:: lancer_simulation(n_tours=60, delta_t=60, afficher_progression=True, affichage_temps_reel=None)
+
+      Lance la simulation pour un nombre donné de pas de temps.
+
+      :param n_tours: Nombre de pas de simulation (défaut: 60)
+      :type n_tours: int
+      :param delta_t: Durée de chaque pas de simulation en secondes (défaut: 60)
+      :type delta_t: float
+      :param afficher_progression: Afficher une barre de progression (défaut: True)
+      :type afficher_progression: bool
+      :param affichage_temps_reel: Instance d'Affichage pour le tableau de bord temps réel
+
+
+
+   .. py:method:: arreter_simulation()
+
+      Arrête la simulation en cours.
+
+
+
+   .. py:method:: get_statistiques()
+
+      Retourne l'historique complet des statistiques.
+
+      :returns: Historique des statistiques à chaque pas de temps
+      :rtype: list
+
+
+
+   .. py:method:: __str__()
+
+      Représentation textuelle du simulateur.
+
+      :returns: Description du simulateur
+      :rtype: str
+
+
+

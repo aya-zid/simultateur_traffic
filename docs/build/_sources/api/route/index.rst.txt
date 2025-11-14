@@ -1,0 +1,168 @@
+route
+=====
+
+.. py:module:: route
+
+.. autoapi-nested-parse::
+
+   Module Route - Définition de la classe Route
+
+   Ce module définit la classe Route qui représente une route
+   dans le réseau routier. Une route a une longueur, une limite de vitesse,
+   et peut contenir plusieurs véhicules.
+
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   route.Route
+
+
+Module Contents
+---------------
+
+.. py:class:: Route(nom, longueur, limite_vitesse)
+
+   Représente une route dans le réseau routier.
+
+   Une route est caractérisée par son nom, sa longueur, sa limite de vitesse
+   et la liste des véhicules qui s'y trouvent.
+
+   :ivar nom: Nom identifiant de la route
+   :vartype nom: str
+   :ivar longueur: Longueur totale de la route (en mètres)
+   :vartype longueur: float
+   :ivar limite_vitesse: Limite de vitesse autorisée (en km/h)
+   :vartype limite_vitesse: float
+   :ivar vehicules_presents: Véhicules sur la route {id_vehicule: véhicule}
+
+   :vartype vehicules_presents: dict
+
+   .. admonition:: Exemple
+
+      >>> route = Route("Autoroute_A1", 10000, 130)
+      >>> voiture = Vehicule(1, "Autoroute_A1")
+      >>> route.ajouter_vehicule(voiture)
+      >>> len(route.vehicules_presents)
+      1
+
+
+   .. py:attribute:: nom
+
+
+   .. py:attribute:: longueur
+
+
+   .. py:attribute:: limite_vitesse
+
+
+   .. py:attribute:: vehicules_presents
+
+
+   .. py:method:: ajouter_vehicule(vehicule)
+
+      Ajoute un véhicule à la route.
+
+      Le véhicule est ajouté à la liste des véhicules présents sur la route.
+      Vérifie que le véhicule n'est pas déjà présent et que sa position est valide.
+
+      :param vehicule: Véhicule à ajouter à la route
+      :type vehicule: Vehicule
+
+      :raises ValueError: Si le véhicule est déjà sur la route ou position invalide
+
+      .. admonition:: Exemple
+
+         >>> route = Route("Route_A", 1000, 90)
+         >>> voiture = Vehicule(1, "Route_A")
+         >>> route.ajouter_vehicule(voiture)
+
+
+
+   .. py:method:: supprimer_vehicule(identifiant_vehicule)
+
+      Supprime un véhicule de la route.
+
+      :param identifiant_vehicule: Identifiant du véhicule à supprimer
+      :type identifiant_vehicule: int
+
+      :returns: Le véhicule supprimé ou None si non trouvé
+      :rtype: Vehicule
+
+      .. admonition:: Exemple
+
+         >>> route.supprimer_vehicule(1)
+         <Vehicule object at 0x...>
+
+
+
+   .. py:method:: mettre_a_jour_vehicules()
+
+      Met à jour tous les véhicules sur la route.
+
+      Cette méthode devrait être appelée à chaque pas de simulation
+      pour mettre à jour les positions et gérer les véhicules qui
+      quittent la route.
+
+      :returns: Liste des véhicules qui ont quitté la route
+      :rtype: list
+
+      .. admonition:: Exemple
+
+         >>> vehicules_sortis = route.mettre_a_jour_vehicules()
+         >>> for vehicule in vehicules_sortis:
+         ...     print(f"Véhicule {vehicule.identifiant} a quitté la route")
+
+
+
+   .. py:method:: get_nombre_vehicules()
+
+      Retourne le nombre de véhicules actuellement sur la route.
+
+      :returns: Nombre de véhicules présents
+      :rtype: int
+
+      .. admonition:: Exemple
+
+         >>> route.get_nombre_vehicules()
+         5
+
+
+
+   .. py:method:: get_densite_trafic()
+
+      Calcule la densité du trafic sur la route.
+
+      La densité est calculée comme le nombre de véhicules par kilomètre.
+
+      :returns: Densité de trafic (véhicules/km)
+      :rtype: float
+
+      .. admonition:: Exemple
+
+         >>> route.get_densite_trafic()
+         25.8
+
+
+
+   .. py:method:: __str__()
+
+      Représentation textuelle de la route.
+
+      :returns: Description de la route
+      :rtype: str
+
+
+
+   .. py:method:: __repr__()
+
+      Représentation technique de la route.
+
+      :returns: Représentation pouvant être utilisée pour recréer l'objet
+      :rtype: str
+
+
+

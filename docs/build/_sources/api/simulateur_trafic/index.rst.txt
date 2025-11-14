@@ -1,0 +1,40 @@
+simulateur_trafic
+=================
+
+.. py:module:: simulateur_trafic
+
+.. autoapi-nested-parse::
+
+   Simulateur de Trafic Routier Intelligent
+
+   Un package Python pour modéliser et simuler un réseau routier intelligent.
+   Ce package permet de créer des routes, intersections, véhicules et de simuler
+   la circulation avec analyse des performances.
+
+   Sous-modules:
+   - models: Classes de base (Véhicule, Route, Réseau)
+   - core: Moteur de simulation et analyse
+   - io_utils: Affichage et export des données
+   - tests: Tests unitaires
+   - data: Fichiers de configuration
+
+   Exemple d'utilisation:
+       >>> from simulateur_trafic.core.simulateur import Simulateur
+       >>> simu = Simulateur("data/config_reseau.json")
+       >>> simu.lancer_simulation(60, 60)
+
+   Auteur: Aya Zid
+   Version: 1.0.0
+   Licence: MIT
+
+
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   /api/simulateur_trafic/main/index
+
+

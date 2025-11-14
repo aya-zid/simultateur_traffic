@@ -1,0 +1,499 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>reseau &mdash; Documentation Simulateur de Trafic Routier Intelligent 1</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=a12a2fe1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/translations.js?v=e6b791cb"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Recherche" href="../../search.html" />
+    <link rel="next" title="vehicule" href="../vehicule/index.html" />
+    <link rel="prev" title="export" href="../export/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Simulateur de Trafic Routier Intelligent
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contenu:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html#presentation">Présentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html#objectifs-du-projet">Objectifs du Projet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html#cas-d-utilisation">Cas d’Utilisation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html#architecture-technique">Architecture Technique</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Utilisation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../usage.html#ligne-de-commande">Ligne de Commande</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../usage.html#options-disponibles">Options Disponibles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usage.html#exemples-d-utilisation">Exemples d’Utilisation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage.html#utilisation-en-tant-que-module">Utilisation en tant que Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage.html#configuration-du-reseau">Configuration du Réseau</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage.html#format-des-sorties">Format des Sorties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage.html#visualisations">Visualisations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage.html#exemple-complet">Exemple Complet</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../conf/index.html">conf</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../conf/index.html#attributes">Attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../conf/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.project"><code class="docutils literal notranslate"><span class="pre">project</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.copyright"><code class="docutils literal notranslate"><span class="pre">copyright</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.author"><code class="docutils literal notranslate"><span class="pre">author</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.release"><code class="docutils literal notranslate"><span class="pre">release</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.extensions"><code class="docutils literal notranslate"><span class="pre">extensions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.autoapi_type"><code class="docutils literal notranslate"><span class="pre">autoapi_type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.autoapi_dirs"><code class="docutils literal notranslate"><span class="pre">autoapi_dirs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.autoapi_add_toctree_entry"><code class="docutils literal notranslate"><span class="pre">autoapi_add_toctree_entry</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.autoapi_root"><code class="docutils literal notranslate"><span class="pre">autoapi_root</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.autoapi_keep_files"><code class="docutils literal notranslate"><span class="pre">autoapi_keep_files</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.napoleon_google_docstring"><code class="docutils literal notranslate"><span class="pre">napoleon_google_docstring</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.napoleon_numpy_docstring"><code class="docutils literal notranslate"><span class="pre">napoleon_numpy_docstring</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.napoleon_include_init_with_doc"><code class="docutils literal notranslate"><span class="pre">napoleon_include_init_with_doc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.napoleon_include_private_with_doc"><code class="docutils literal notranslate"><span class="pre">napoleon_include_private_with_doc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.napoleon_include_special_with_doc"><code class="docutils literal notranslate"><span class="pre">napoleon_include_special_with_doc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.napoleon_use_admonition_for_examples"><code class="docutils literal notranslate"><span class="pre">napoleon_use_admonition_for_examples</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.napoleon_use_admonition_for_notes"><code class="docutils literal notranslate"><span class="pre">napoleon_use_admonition_for_notes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.napoleon_use_admonition_for_references"><code class="docutils literal notranslate"><span class="pre">napoleon_use_admonition_for_references</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.napoleon_use_ivar"><code class="docutils literal notranslate"><span class="pre">napoleon_use_ivar</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.napoleon_use_param"><code class="docutils literal notranslate"><span class="pre">napoleon_use_param</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.napoleon_use_rtype"><code class="docutils literal notranslate"><span class="pre">napoleon_use_rtype</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.html_theme"><code class="docutils literal notranslate"><span class="pre">html_theme</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.html_theme_options"><code class="docutils literal notranslate"><span class="pre">html_theme_options</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.html_static_path"><code class="docutils literal notranslate"><span class="pre">html_static_path</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.master_doc"><code class="docutils literal notranslate"><span class="pre">master_doc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.language"><code class="docutils literal notranslate"><span class="pre">language</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.todo_include_todos"><code class="docutils literal notranslate"><span class="pre">todo_include_todos</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../conf/index.html#conf.autoapi_options"><code class="docutils literal notranslate"><span class="pre">autoapi_options</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../route/index.html">route</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../route/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../route/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../route/index.html#route.Route"><code class="docutils literal notranslate"><span class="pre">Route</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../export/index.html">export</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../export/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../export/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../export/index.html#export.Export"><code class="docutils literal notranslate"><span class="pre">Export</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">reseau</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#reseau.ReseauRoutier"><code class="docutils literal notranslate"><span class="pre">ReseauRoutier</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../vehicule/index.html">vehicule</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../vehicule/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../vehicule/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../vehicule/index.html#vehicule.Vehicule"><code class="docutils literal notranslate"><span class="pre">Vehicule</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../analyseur/index.html">analyseur</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../analyseur/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../analyseur/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../analyseur/index.html#analyseur.Analyseur"><code class="docutils literal notranslate"><span class="pre">Analyseur</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../affichage/index.html">affichage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../affichage/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../affichage/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../affichage/index.html#affichage.Affichage"><code class="docutils literal notranslate"><span class="pre">Affichage</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../simulateur/index.html">simulateur</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../simulateur/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../simulateur/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../simulateur/index.html#simulateur.Simulateur"><code class="docutils literal notranslate"><span class="pre">Simulateur</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../test_simulateur/index.html">test_simulateur</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../test_simulateur/index.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../test_simulateur/index.html#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../test_simulateur/index.html#test_simulateur.TestVehicule"><code class="docutils literal notranslate"><span class="pre">TestVehicule</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../test_simulateur/index.html#test_simulateur.TestRoute"><code class="docutils literal notranslate"><span class="pre">TestRoute</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../test_simulateur/index.html#test_simulateur.TestReseauRoutier"><code class="docutils literal notranslate"><span class="pre">TestReseauRoutier</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../simulateur_trafic/index.html">simulateur_trafic</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../simulateur_trafic/index.html#submodules">Submodules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../simulateur_trafic/main/index.html">simulateur_trafic.main</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples.html">Exemples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#exemple-basique">Exemple Basique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#exemple-avec-configuration-personnalisee">Exemple avec Configuration Personnalisée</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#exemple-avec-analyse-avancee">Exemple avec Analyse Avancée</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#exemple-avec-export-des-donnees">Exemple avec Export des Données</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#exemple-avec-visualisation">Exemple avec Visualisation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#scripts-d-exemple">Scripts d’Exemple</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Simulateur de Trafic Routier Intelligent</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">API Reference</a></li>
+      <li class="breadcrumb-item active">reseau</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/api/reseau/index.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-reseau">
+<span id="reseau"></span><h1>reseau<a class="headerlink" href="#module-reseau" title="Lien vers cette rubrique"></a></h1>
+<p>Module ReseauRoutier - Définition de la classe ReseauRoutier</p>
+<p>Ce module définit la classe ReseauRoutier qui représente l’ensemble
+du réseau routier. Elle gère toutes les routes, les intersections
+et la logique globale de simulation.</p>
+<section id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Lien vers cette rubrique"></a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#reseau.ReseauRoutier" title="reseau.ReseauRoutier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ReseauRoutier</span></code></a></p></td>
+<td><p>Représente l'ensemble du réseau routier.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Lien vers cette rubrique"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="reseau.ReseauRoutier">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">reseau.</span></span><span class="sig-name descname"><span class="pre">ReseauRoutier</span></span><a class="reference internal" href="../../_modules/reseau.html#ReseauRoutier"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#reseau.ReseauRoutier" title="Lien vers cette définition"></a></dt>
+<dd><p>Représente l’ensemble du réseau routier.</p>
+<p>Le réseau routier contient toutes les routes et gère les connections
+entre elles. Il orchestre la simulation globale du trafic.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>routes</strong> (<em>dict</em>) – Dictionnaire des routes {nom_route: objet_route}</p></li>
+<li><p><strong>intersections</strong> (<em>dict</em>) – Dictionnaire des connections entre routes</p></li>
+<li><p><strong>historique_trafic</strong> (<em>list</em>) – Historique des états du trafic</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition-exemple admonition">
+<p class="admonition-title">Exemple</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">reseau</span> <span class="o">=</span> <span class="n">ReseauRoutier</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">route1</span> <span class="o">=</span> <span class="n">Route</span><span class="p">(</span><span class="s2">&quot;Route_A&quot;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">reseau</span><span class="o">.</span><span class="n">ajouter_route</span><span class="p">(</span><span class="n">route1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">reseau</span><span class="o">.</span><span class="n">ajouter_intersection</span><span class="p">(</span><span class="s2">&quot;Route_A&quot;</span><span class="p">,</span> <span class="s2">&quot;Route_B&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="reseau.ReseauRoutier.routes">
+<span class="sig-name descname"><span class="pre">routes</span></span><a class="reference internal" href="../../_modules/reseau.html#ReseauRoutier.routes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#reseau.ReseauRoutier.routes" title="Lien vers cette définition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="reseau.ReseauRoutier.intersections">
+<span class="sig-name descname"><span class="pre">intersections</span></span><a class="reference internal" href="../../_modules/reseau.html#ReseauRoutier.intersections"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#reseau.ReseauRoutier.intersections" title="Lien vers cette définition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="reseau.ReseauRoutier.historique_trafic">
+<span class="sig-name descname"><span class="pre">historique_trafic</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="reference internal" href="../../_modules/reseau.html#ReseauRoutier.historique_trafic"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#reseau.ReseauRoutier.historique_trafic" title="Lien vers cette définition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="reseau.ReseauRoutier.ajouter_route">
+<span class="sig-name descname"><span class="pre">ajouter_route</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">route</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/reseau.html#ReseauRoutier.ajouter_route"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#reseau.ReseauRoutier.ajouter_route" title="Lien vers cette définition"></a></dt>
+<dd><p>Ajoute une route au réseau.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>route</strong> (<a class="reference internal" href="../route/index.html#route.Route" title="route.Route"><em>Route</em></a>) – Route à ajouter au réseau</p>
+</dd>
+<dt class="field-even">Lève<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – Si une route avec le même nom existe déjà</p>
+</dd>
+</dl>
+<div class="admonition-exemple admonition">
+<p class="admonition-title">Exemple</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">reseau</span> <span class="o">=</span> <span class="n">ReseauRoutier</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">route</span> <span class="o">=</span> <span class="n">Route</span><span class="p">(</span><span class="s2">&quot;Autoroute_A1&quot;</span><span class="p">,</span> <span class="mi">5000</span><span class="p">,</span> <span class="mi">130</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">reseau</span><span class="o">.</span><span class="n">ajouter_route</span><span class="p">(</span><span class="n">route</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="reseau.ReseauRoutier.ajouter_intersection">
+<span class="sig-name descname"><span class="pre">ajouter_intersection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">route_source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">route_destination</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/reseau.html#ReseauRoutier.ajouter_intersection"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#reseau.ReseauRoutier.ajouter_intersection" title="Lien vers cette définition"></a></dt>
+<dd><p>Ajoute une connection entre deux routes.</p>
+<p>Crée une intersection permettant aux véhicules de passer
+de la route source à la route destination.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>route_source</strong> (<em>str</em>) – Nom de la route de départ</p></li>
+<li><p><strong>route_destination</strong> (<em>str</em>) – Nom de la route d’arrivée</p></li>
+</ul>
+</dd>
+<dt class="field-even">Lève<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – Si une des routes n’existe pas</p>
+</dd>
+</dl>
+<div class="admonition-exemple admonition">
+<p class="admonition-title">Exemple</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">reseau</span><span class="o">.</span><span class="n">ajouter_intersection</span><span class="p">(</span><span class="s2">&quot;Route_A&quot;</span><span class="p">,</span> <span class="s2">&quot;Route_B&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="reseau.ReseauRoutier.get_route">
+<span class="sig-name descname"><span class="pre">get_route</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nom_route</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/reseau.html#ReseauRoutier.get_route"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#reseau.ReseauRoutier.get_route" title="Lien vers cette définition"></a></dt>
+<dd><p>Récupère une route par son nom.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>nom_route</strong> (<em>str</em>) – Nom de la route à récupérer</p>
+</dd>
+<dt class="field-even">Renvoie<span class="colon">:</span></dt>
+<dd class="field-even"><p>La route correspondante ou None si non trouvée</p>
+</dd>
+<dt class="field-odd">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../route/index.html#route.Route" title="route.Route">Route</a></p>
+</dd>
+</dl>
+<div class="admonition-exemple admonition">
+<p class="admonition-title">Exemple</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">route</span> <span class="o">=</span> <span class="n">reseau</span><span class="o">.</span><span class="n">get_route</span><span class="p">(</span><span class="s2">&quot;Autoroute_A1&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">route</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Route trouvée: </span><span class="si">{</span><span class="n">route</span><span class="o">.</span><span class="n">nom</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="reseau.ReseauRoutier.get_routes_destination">
+<span class="sig-name descname"><span class="pre">get_routes_destination</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">route_source</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/reseau.html#ReseauRoutier.get_routes_destination"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#reseau.ReseauRoutier.get_routes_destination" title="Lien vers cette définition"></a></dt>
+<dd><p>Récupère les routes accessibles depuis une route source.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>route_source</strong> (<em>str</em>) – Nom de la route de départ</p>
+</dd>
+<dt class="field-even">Renvoie<span class="colon">:</span></dt>
+<dd class="field-even"><p>Liste des noms des routes accessibles</p>
+</dd>
+<dt class="field-odd">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+<div class="admonition-exemple admonition">
+<p class="admonition-title">Exemple</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">destinations</span> <span class="o">=</span> <span class="n">reseau</span><span class="o">.</span><span class="n">get_routes_destination</span><span class="p">(</span><span class="s2">&quot;Route_A&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">destinations</span><span class="p">)</span>
+<span class="go">[&#39;Route_B&#39;, &#39;Route_C&#39;]</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="reseau.ReseauRoutier.get_nombre_total_vehicules">
+<span class="sig-name descname"><span class="pre">get_nombre_total_vehicules</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/reseau.html#ReseauRoutier.get_nombre_total_vehicules"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#reseau.ReseauRoutier.get_nombre_total_vehicules" title="Lien vers cette définition"></a></dt>
+<dd><p>Calcule le nombre total de véhicules dans tout le réseau.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Renvoie<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Nombre total de véhicules</p>
+</dd>
+<dt class="field-even">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+<div class="admonition-exemple admonition">
+<p class="admonition-title">Exemple</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">total</span> <span class="o">=</span> <span class="n">reseau</span><span class="o">.</span><span class="n">get_nombre_total_vehicules</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Véhicules en circulation: </span><span class="si">{</span><span class="n">total</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="reseau.ReseauRoutier.mettre_a_jour_reseau">
+<span class="sig-name descname"><span class="pre">mettre_a_jour_reseau</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/reseau.html#ReseauRoutier.mettre_a_jour_reseau"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#reseau.ReseauRoutier.mettre_a_jour_reseau" title="Lien vers cette définition"></a></dt>
+<dd><p>Met à jour l’état complet du réseau.</p>
+<p>Cette méthode met à jour toutes les routes et gère les véhicules
+qui changent de route aux intersections.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Renvoie<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Statistiques de la mise à jour</p>
+</dd>
+<dt class="field-even">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<div class="admonition-exemple admonition">
+<p class="admonition-title">Exemple</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">stats</span> <span class="o">=</span> <span class="n">reseau</span><span class="o">.</span><span class="n">mettre_a_jour_reseau</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Véhicules ayant changé de route: </span><span class="si">{</span><span class="n">stats</span><span class="p">[</span><span class="s1">&#39;changements_route&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="reseau.ReseauRoutier.get_densite_trafic_moyenne">
+<span class="sig-name descname"><span class="pre">get_densite_trafic_moyenne</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/reseau.html#ReseauRoutier.get_densite_trafic_moyenne"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#reseau.ReseauRoutier.get_densite_trafic_moyenne" title="Lien vers cette définition"></a></dt>
+<dd><p>Calcule la densité de trafic moyenne sur toutes les routes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Renvoie<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Densité moyenne (véhicules/km)</p>
+</dd>
+<dt class="field-even">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+<div class="admonition-exemple admonition">
+<p class="admonition-title">Exemple</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">densite_moyenne</span> <span class="o">=</span> <span class="n">reseau</span><span class="o">.</span><span class="n">get_densite_trafic_moyenne</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Densité moyenne: </span><span class="si">{</span><span class="n">densite_moyenne</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> véhicules/km&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="reseau.ReseauRoutier.__str__">
+<span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/reseau.html#ReseauRoutier.__str__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#reseau.ReseauRoutier.__str__" title="Lien vers cette définition"></a></dt>
+<dd><p>Représentation textuelle du réseau routier.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Renvoie<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Description du réseau</p>
+</dd>
+<dt class="field-even">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="reseau.ReseauRoutier.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/reseau.html#ReseauRoutier.__repr__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#reseau.ReseauRoutier.__repr__" title="Lien vers cette définition"></a></dt>
+<dd><p>Représentation technique du réseau routier.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Renvoie<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Représentation pouvant être utilisée pour recréer l’objet</p>
+</dd>
+<dt class="field-even">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="../export/index.html" class="btn btn-neutral float-left" title="export" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="../vehicule/index.html" class="btn btn-neutral float-right" title="vehicule" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2025, Aya Zid.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
